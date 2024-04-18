@@ -3,8 +3,8 @@ Write-Host "Please don't use your device while the script is running." -Foregrou
 
 if (-not (Test-Path ~\dotfiles-config.ps1))
 {
-    Write-Host "The file ~\dotfiles-config.ps1 does not exist. Aborting." -ForegroundColor "Red";
-    return;
+		Write-Host "The file ~\dotfiles-config.ps1 does not exist. Aborting." -ForegroundColor "Red";
+		return;
 }
 
 $dir = "$HOME/dotfiles/dotfiles-windows"
