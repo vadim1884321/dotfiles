@@ -1,0 +1,117 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "lightYellow",
+          "style": "plain",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "type": "os",
+          "properties": {
+            "windows": "<#0078d3>\uE62A</>",
+            "ubuntu": "<#e95420>\uF31b</>"
+          }
+        },
+        {
+          "foreground": "red",
+          "properties": {
+            "root_icon": "\uf0ad"
+          },
+          "style": "plain",
+          "template": " \uf0e7",
+          "type": "root"
+        },
+        {
+          "foreground": "cyan",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#ff94df",
+          "properties": {
+            "branch_icon": "\ue0a0 ",
+            "fetch_status": true
+          },
+          "style": "plain",
+          "template": "<#F3EFF5>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#44FFD2",
+          "properties": {
+            "fetch_package_manager": false
+          },
+          "style": "plain",
+          "template": "<#F3EFF5>via</> \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "foreground": "#b7410e",
+          "style": "plain",
+          "template": "<#F3EFF5>via</> \ue7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "rust"
+        },
+        {
+          "foreground": "#7FD5EA",
+          "style": "plain",
+          "template": "<#F3EFF5>via</> \ue65e {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "go"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "white",
+          "style": "plain",
+          "template": "in <blue><b>{{ .Name }}</b></> ",
+          "type": "shell"
+        },
+        {
+          "foreground": "white",
+          "style": "plain",
+          "template": "at <blue><b>{{ .CurrentDate | date \"15:04:05\" }}</b></>",
+          "type": "time"
+        },
+        {
+          "foreground": "white",
+          "properties": {
+            "always_enabled": false,
+            "style": "roundrock"
+          },
+          "style": "plain",
+          "template": " took <blue><b>{{ .FormattedMs }}</b></>",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "green",
+          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u2b9e",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
