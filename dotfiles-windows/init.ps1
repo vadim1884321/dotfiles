@@ -26,12 +26,12 @@ Admin-Check
 $github="https://github.com/vadim1884321"
 
 $win="$github/dotfiles.git"
-$win_dir="$HOME/dotfiles.git"
+$win_dir="$HOME/dotfiles"
 
 Write-Host "# Installing git"
 winget install --exact --silent Git.Git --accept-package-agreements
 
-Write-Host "# Clone BartSte/dotfiles-windows.git as a bare repository"
+Write-Host "# Clone as a bare repository"
 Write-Host $win
 clone $win $win_dir -and checkout $win_dir
 
