@@ -7,8 +7,10 @@ Write-Host "Please don't use your device while the script is running." -Foregrou
 # 		return;
 # }
 
-$dir = "$env:USERPROFILE\dotfiles\windows"
-. "$dir/powershell/main.ps1"
+# $dir = "$PSScriptRoot\dotfiles\windows"
+. "$PSScriptRoot/powershell/main.ps1"
+. "$PSScriptRoot/configurations/main.ps1"
+# . "$PSScriptRoot/dependencies/test.ps1"
 # . "$dir/dependencies/main.ps1"
 # . "$dir/windows/main.ps1"
 # . "$dir/git/main.ps1"

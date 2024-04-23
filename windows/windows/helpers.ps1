@@ -1,25 +1,16 @@
 . ~\dotfiles\dotfiles-windows\helpers.ps1
 
-function Set-WindowsExplorer-ShowFileExtensions
-{
-    Write-Host "Configuring Windows File Explorer to show file extensions:" -ForegroundColor "Green";
+function Set-OEMInformation {
+	Write-Host "Setting OEM information (Registry)" -ForegroundColor "Green";
 
-    $RegPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
-    Set-ItemProperty -Path $RegPath -Name "HideFileExt" -Value 0;
-}
+    $OEMRegPath = "HKLM:\Software\Microsoft\Windows\CurrentVersion\OEMInformation"
 
-function Set-WindowsFileExplorer-StartFolder
-{
-    Write-Host "Configuring start folder of Windows File Explorer:" -ForegroundColor "Green";
-
-    $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
-
-    if (-not (Test-PathRegistryKey -Path $RegPath -Name "LaunchTo"))
-    {
-        New-ItemProperty -Path $RegPath -Name "LaunchTo" -PropertyType DWord;
-    }
-
-    Set-ItemProperty -Path $RegPath -Name "LaunchTo" -Value 2; # [This PC: 1], [Quick access: 2], [Downloads: 3]
+		Set-ItemProperty -Path $OEMRegPath -Name Model -Value "SER"
+    Set-ItemProperty -Path $OEMRegPath -Name Manufacturer -Value "AZW"
+		Set-ItemProperty -Path $OEMRegPath -Name SupportURL -Value "http://www.bee-link.com/"
+    # Set-ItemProperty -Path $OEMRegPath -Name SupportPhone -Value "111111"
+    Set-ItemProperty -Path $OEMRegPath -Name SupportHours -Value "Always"
+    Set-ItemProperty -Path $OEMRegPath -Name HelpCustomized -Value 0
 }
 
 function Set-Classic-ContextMenu-Configuration

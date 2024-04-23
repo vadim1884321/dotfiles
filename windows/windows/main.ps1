@@ -135,9 +135,11 @@ if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) { New-Item -Path "HKCU:\
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" "NumberOfSIUFInPeriod" 0
 
 # Feedback: Telemetry: Send Diagnostic and usage data: Basic: 1, Enhanced: 2, Full: 3
+Write-Host "Send Diagnostic and usage data:" -ForegroundColor "Green"
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" "AllowTelemetry" 1
 
-# Start Menu: Disable suggested content: Enable: 1, Disable: 0
+# Start Menu: Не показывать предложения в меню Пуск
+Write-Host "Disable suggested content:" -ForegroundColor "Green"
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-338388Enabled" 0
 
 ###############################################################################
@@ -147,86 +149,76 @@ Write-Host "Configuring Explorer, Taskbar, and System Tray..." -ForegroundColor 
 
 # $path = Join-Path -Path $HOME -Child $wall_paper
 # Set-WallPaper($path);
-Set-WindowsExplorer-ShowFileExtensions;
-Set-WindowsFileExplorer-StartFolder;
+# Set-WindowsExplorer-ShowFileExtensions;
+# Set-WindowsFileExplorer-StartFolder;
 # Set-Multitasking-Configuration;
 Set-Classic-ContextMenu-Configuration;
 # Set-SetAsBackground-To-Extended-ContextMenu;
 # Disable-RecentlyOpenedItems-From-JumpList;
 
-# Enable dark mode
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
+# Включить тёмную тему
+Write-Host "Enable dark mode:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" -Value 0
 
 # Ensure necessary registry paths
 if (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer")) { New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Type Folder | Out-Null }
 if (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState")) { New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" -Type Folder | Out-Null }
 if (!(Test-Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Search")) { New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Search" -Type Folder | Out-Null }
 
-# Explorer: Show hidden files by default: Show Files: 1, Hide Files: 2
+# Explorer: открыть проводник: [Этот компьютер: 1], [Главная: 2], [Загрузки: 3]
+Write-Host "Configuring start folder of Windows File Explorer:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "LaunchTo" 1
+
+# Explorer: показывать скрытые файлы, папки и диски: [Показать: 1, Скрыть: 2]
+Write-Host "Configuring Windows File Explorer to show hidden files:" -ForegroundColor "Green"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
 
-# Explorer: Show file extensions by default
+# Explorer: Скрывать расширения для зарегистрированных типов файлов
+Write-Host "Configuring Windows File Explorer to show file extensions:" -ForegroundColor "Green"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
 
-# Explorer: Show path in title bar
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
+# Explorer: Не показывать недавно использованные файлы
+Write-Host "Disable Recent Files:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" "ShowRecent" 0
 
-# Explorer: Avoid creating Thumbs.db files on network volumes
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "DisableThumbnailsOnNetworkFolders" 1
+# Explorer: Не показывать часто используемые папки
+Write-Host "Disable Frequent Files:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" "ShowFrequent" 0
 
-# Taskbar: Enable small icons
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarSmallIcons" 1
+# Explorer: Не показывать файлы из Office.com
+Write-Host "Disable Show Files from Office.com:" -ForegroundColor "Green"
+Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\Explorer" "DisableGraphRecentItems" 1
 
-# Taskbar: Don't show Windows Store Apps on Taskbar
+# Показывать интерфейс приветствия Windows
+Write-Host "Show the Windows welcome experience:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-310093Enabled" 0
+
+# Предлагать способы завершения настройки устройства
+Write-Host "Suggest ways to get the most out of Windows:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" "ScoobeSystemSettingEnabled" 0
+
+# Получать советы и предложения
+Write-Host "Get tips and suggestions when using Windows:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-338389Enabled" 0
+
+# Taskbar: Не показывать Windows Store на панели задач
+Write-Host "Don't show Windows Store Apps on Taskbar:" -ForegroundColor "Green"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "StoreAppsOnTaskbar" 0
 
-# Taskbar: Disable Bing Search
+# Taskbar: Отключить поиск Bing
+Write-Host "Disable Bing Search:" -ForegroundColor "Green"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" "BingSearchEnabled" 0 # For Windows 10
 
-# SysTray: Hide the Action Center, Network, and Volume icons
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAHealth" 1  # Action Center
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCANetwork" 1 # Network
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "HideSCAVolume" 1  # Volume
-
-# Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 1
+# Taskbar: Показать цвет элементов в меню Пуск и на панели задач: [Выключить: 0, Включить для панели задач и меню Пуск: 1, Только панель задач: 2]
+Write-Host "Show colors on Taskbar, Start, and SysTray:" -ForegroundColor "Green"
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 0
 
 # Titlebar: Disable theme colors on titlebar
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 0
 
-# Recycle Bin: Disable Delete Confirmation Dialog
+# Recycle Bin: Отключить запрашивать подтверждения на удаление
+Write-Host "Disable Delete Confirmation Dialog:" -ForegroundColor "Green"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
-
-###############################################################################
-### Devices and Startup
-###############################################################################
-Write-Host "Configuring Devices and Startup..." -ForegroundColor "Yellow"
-
-# Sound: Disable Startup Sound
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "DisableStartupSound" 1
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation" "DisableStartupSound" 1
-
-$old_path=[System.Environment]::GetEnvironmentVariable('PATH',[System.EnvironmentVariableTarget]::User)
-$new_path=$old_path+$env_paths
-[System.Environment]::SetEnvironmentVariable('PATH', $new_path, [System.EnvironmentVariableTarget]::User)
-
-###############################################################################
-### Accessibility and Ease of Use                                             #
-###############################################################################
-Write-Host "Configuring Accessibility..." -ForegroundColor "Yellow"
-
-# Turn Off Windows Narrator
-if (!(Test-Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Narrator.exe")) { New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Narrator.exe" -Type Folder | Out-Null }
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Narrator.exe" "Debugger" "%1"
-
-# Disable showing what can be snapped next to a window
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "SnapAssist" 0
-
-# Disable automatic resize of adjacent windows on snap
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "JointResize" 0
-
-# Disable auto-correct
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\TabletTip\1.7" "EnableAutocorrection" 0
 
 ###############################################################################
 ### Windows Update & Application Updates                                      #

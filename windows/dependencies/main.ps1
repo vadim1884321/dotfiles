@@ -1,6 +1,6 @@
 . ~/dotfiles/dotfiles-windows/dependencies/helpers.ps1
 
-Admin-Check;
+# Admin-Check;
 
 Write-Host 'Installing Package Providers...' -ForegroundColor 'Yellow';
 
