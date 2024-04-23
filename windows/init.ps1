@@ -6,7 +6,15 @@ winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agree
 Write-Host 'Installing PowerShell...' -ForegroundColor 'Yellow';
 winget install --exact --silent Microsoft.PowerShell --accept-package-agreements
 
-Copy-Item -Path "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/terminal/settings.json" -Destination "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" -Force
+# Copy-Item -Path "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/terminal/settings.json" -Destination "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" -Force
+
+$Parameters = @{
+  Uri             = "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/terminal/settings.json"
+  OutFile         = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+  UseBasicParsing = $true
+  Verbose         = $true
+}
+Invoke-WebRequest @Parameters -Force
 
 Write-Host 'Installing git...' -ForegroundColor 'Yellow';
 winget install --exact --silent Git.Git --accept-package-agreements
