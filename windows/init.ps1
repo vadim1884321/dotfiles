@@ -14,7 +14,7 @@ $Parameters = @{
   UseBasicParsing = $true
   Verbose         = $true
 }
-Invoke-WebRequest @Parameters -Force
+Invoke-WebRequest @Parameters
 
 Write-Host 'Installing git...' -ForegroundColor 'Yellow';
 winget install --exact --silent Git.Git --accept-package-agreements
