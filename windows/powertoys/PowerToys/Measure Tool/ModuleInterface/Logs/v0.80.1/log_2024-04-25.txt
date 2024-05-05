@@ -1,0 +1,2 @@
+[2024-04-25 11:34:56.387990] [p-8208] [t-8212] [info] Measure Tool logger is initialized
+[2024-04-25 14:26:24.277592] [p-8148] [t-7464] [info] Measure Tool logger is initialized

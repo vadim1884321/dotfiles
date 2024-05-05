@@ -1,0 +1,2 @@
+[2024-04-20 10:43:30.741164] [p-8532] [t-8536] [info] mouse-jump logger is initialized
+[2024-04-20 11:46:34.789183] [p-6224] [t-6220] [info] mouse-jump logger is initialized

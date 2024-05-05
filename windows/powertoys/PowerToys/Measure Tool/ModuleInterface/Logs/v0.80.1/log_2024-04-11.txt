@@ -1,0 +1,1 @@
+[2024-04-11 19:05:51.594729] [p-9068] [t-13132] [info] Measure Tool logger is initialized

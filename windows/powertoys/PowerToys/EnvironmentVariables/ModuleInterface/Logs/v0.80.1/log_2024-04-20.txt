@@ -1,0 +1,2 @@
+[2024-04-20 10:43:31.420081] [p-8532] [t-8536] [info] environment-variables logger is initialized
+[2024-04-20 11:46:35.280484] [p-6224] [t-6220] [info] environment-variables logger is initialized

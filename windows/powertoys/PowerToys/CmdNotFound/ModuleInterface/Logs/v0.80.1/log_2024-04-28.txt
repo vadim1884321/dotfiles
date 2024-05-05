@@ -1,0 +1,4 @@
+[2024-04-28 10:59:05.246645] [p-7560] [t-7784] [info] cmd-not-found logger is initialized
+[2024-04-28 10:59:05.246989] [p-7560] [t-7784] [info] CmdNotFound object is constructing
+[2024-04-28 12:17:42.220935] [p-2520] [t-2464] [info] cmd-not-found logger is initialized
+[2024-04-28 12:17:42.221241] [p-2520] [t-2464] [info] CmdNotFound object is constructing

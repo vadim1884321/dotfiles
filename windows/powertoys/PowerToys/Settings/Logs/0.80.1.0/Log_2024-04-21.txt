@@ -1,0 +1,6 @@
+[18:31:28.8700189] [Info] KeyboardManagerViewModel::OpenEditor
+    Starting Keyboard Manager editor from C:\Program Files\PowerToys\KeyboardManagerEditor\PowerToys.KeyboardManagerEditor.exe
+[18:36:51.3002078] [Info] KeyboardManagerViewModel::OpenEditor
+    Starting Keyboard Manager editor from C:\Program Files\PowerToys\KeyboardManagerEditor\PowerToys.KeyboardManagerEditor.exe
+[18:37:00.4320587] [Info] KeyboardManagerViewModel::OpenEditor
+    Starting Keyboard Manager editor from C:\Program Files\PowerToys\KeyboardManagerEditor\PowerToys.KeyboardManagerEditor.exe

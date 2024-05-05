@@ -1,0 +1,6 @@
+[2024-04-19 11:37:42.672216] [p-8912] [t-8916] [info] shortcut-guide logger is initialized
+[2024-04-19 11:37:42.673808] [p-8912] [t-8916] [trace] GetHotkeyEx()
+[2024-04-19 11:37:44.610960] [p-8912] [t-8916] [info] Shortcut Guide is enabling
+[2024-04-19 11:37:44.611041] [p-8912] [t-8916] [trace] GetHotkeyEx()
+[2024-04-19 17:02:25.687495] [p-8912] [t-7140] [trace] Send settings telemetry
+[2024-04-19 17:02:25.731777] [p-8912] [t-7140] [trace] Started SG process with pid=12492

@@ -1,0 +1,2 @@
+[2024-04-28 10:59:03.840716] [p-7560] [t-7784] [info] imageresizer logger is initialized
+[2024-04-28 12:17:40.792526] [p-2520] [t-2464] [info] imageresizer logger is initialized

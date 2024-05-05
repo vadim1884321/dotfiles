@@ -1,0 +1,2 @@
+[2024-04-15 10:18:18.938209] [p-8624] [t-8628] [info] crop-and-lock logger is initialized
+[2024-04-15 11:54:47.500618] [p-7748] [t-7740] [info] crop-and-lock logger is initialized

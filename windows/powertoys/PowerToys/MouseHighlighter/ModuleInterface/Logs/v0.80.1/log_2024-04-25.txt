@@ -1,0 +1,10 @@
+[2024-04-25 11:34:55.607918] [p-8208] [t-8212] [info] mouse-highlighter logger is initialized
+[2024-04-25 11:34:55.609283] [p-8208] [t-8212] [error] Left click color ARGB value is invalid. Will use default value
+[2024-04-25 11:34:55.609326] [p-8208] [t-8212] [error] Right click color ARGB value is invalid. Will use default value
+[2024-04-25 11:34:56.979509] [p-8208] [t-9084] [info] Starting a highlighter instance.
+[2024-04-25 11:34:56.983286] [p-8208] [t-9084] [info] Initialized the highlighter instance.
+[2024-04-25 14:26:23.619699] [p-8148] [t-7464] [info] mouse-highlighter logger is initialized
+[2024-04-25 14:26:23.621684] [p-8148] [t-7464] [error] Left click color ARGB value is invalid. Will use default value
+[2024-04-25 14:26:23.621926] [p-8148] [t-7464] [error] Right click color ARGB value is invalid. Will use default value
+[2024-04-25 14:26:25.053094] [p-8148] [t-9028] [info] Starting a highlighter instance.
+[2024-04-25 14:26:25.062043] [p-8148] [t-9028] [info] Initialized the highlighter instance.

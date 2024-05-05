@@ -1,0 +1,35 @@
+[2024-04-21 18:31:28.913816] [p-6116] [t-8592] [info] keyboard-manager logger is initialized
+[2024-04-21 18:31:28.960633] [p-6116] [t-8592] [trace] Created/Opened Local\PowerToys_KBMEditor_InstanceMutex mutex
+[2024-04-21 18:31:28.960719] [p-6116] [t-8592] [trace] Editor started from the settings with pid 7984
+[2024-04-21 18:31:28.961385] [p-6116] [t-8592] [trace] SettingsHelper::LoadSettings()
+[2024-04-21 18:31:28.961887] [p-6116] [t-8592] [trace] CreateEditShortcutsWindowImpl()
+[2024-04-21 18:31:28.961930] [p-6116] [t-8592] [trace] Signaled PowerToys_KeyboardManager_Event_EditorWindow event to suspend the KBM engine
+[2024-04-21 18:31:28.980338] [p-6116] [t-8592] [info] Theme is now Dark
+[2024-04-21 18:31:28.981977] [p-6116] [t-8592] [trace] XamlBridge2::InitBridge()
+[2024-04-21 18:31:29.310186] [p-6116] [t-8592] [trace] XamlBridge2::MessageLoop()
+[2024-04-21 18:36:00.344889] [p-6116] [t-8592] [trace] Signaled PowerToys_KeyboardManager_Event_Settings event
+[2024-04-21 18:36:00.376532] [p-6116] [t-8592] [trace] XamlBridge2::MessageLoop() stopped
+[2024-04-21 18:36:00.428253] [p-6116] [t-8592] [trace] Terminating process 6116
+[2024-04-21 18:36:51.320519] [p-15908] [t-15872] [info] keyboard-manager logger is initialized
+[2024-04-21 18:36:51.362639] [p-15908] [t-15872] [trace] Created/Opened Local\PowerToys_KBMEditor_InstanceMutex mutex
+[2024-04-21 18:36:51.362697] [p-15908] [t-15872] [trace] Editor started from the settings with pid 7984
+[2024-04-21 18:36:51.363566] [p-15908] [t-15872] [trace] SettingsHelper::LoadSettings()
+[2024-04-21 18:36:51.364204] [p-15908] [t-15872] [trace] CreateEditKeyboardWindowImpl()
+[2024-04-21 18:36:51.364234] [p-15908] [t-15872] [trace] Signaled PowerToys_KeyboardManager_Event_EditorWindow event to suspend the KBM engine
+[2024-04-21 18:36:51.381784] [p-15908] [t-15872] [info] Theme is now Dark
+[2024-04-21 18:36:51.383397] [p-15908] [t-15872] [trace] XamlBridge2::InitBridge()
+[2024-04-21 18:36:51.473038] [p-15908] [t-15872] [trace] XamlBridge2::MessageLoop()
+[2024-04-21 18:36:57.843294] [p-15908] [t-15872] [trace] XamlBridge2::MessageLoop() stopped
+[2024-04-21 18:36:57.844643] [p-15908] [t-15872] [trace] Terminating process 15908
+[2024-04-21 18:37:00.451766] [p-10516] [t-15136] [info] keyboard-manager logger is initialized
+[2024-04-21 18:37:00.493978] [p-10516] [t-15136] [trace] Created/Opened Local\PowerToys_KBMEditor_InstanceMutex mutex
+[2024-04-21 18:37:00.494045] [p-10516] [t-15136] [trace] Editor started from the settings with pid 7984
+[2024-04-21 18:37:00.494732] [p-10516] [t-15136] [trace] SettingsHelper::LoadSettings()
+[2024-04-21 18:37:00.495401] [p-10516] [t-15136] [trace] CreateEditShortcutsWindowImpl()
+[2024-04-21 18:37:00.495436] [p-10516] [t-15136] [trace] Signaled PowerToys_KeyboardManager_Event_EditorWindow event to suspend the KBM engine
+[2024-04-21 18:37:00.513299] [p-10516] [t-15136] [info] Theme is now Dark
+[2024-04-21 18:37:00.514917] [p-10516] [t-15136] [trace] XamlBridge2::InitBridge()
+[2024-04-21 18:37:00.621165] [p-10516] [t-15136] [trace] XamlBridge2::MessageLoop()
+[2024-04-21 18:37:06.642066] [p-10516] [t-15136] [trace] Signaled PowerToys_KeyboardManager_Event_Settings event
+[2024-04-21 18:37:06.665781] [p-10516] [t-15136] [trace] XamlBridge2::MessageLoop() stopped
+[2024-04-21 18:37:06.667047] [p-10516] [t-15136] [trace] Terminating process 10516

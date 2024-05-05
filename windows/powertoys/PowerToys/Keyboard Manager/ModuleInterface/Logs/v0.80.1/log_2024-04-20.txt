@@ -1,0 +1,2 @@
+[2024-04-20 10:43:30.114162] [p-8532] [t-8536] [info] keyboard-manager logger is initialized
+[2024-04-20 11:46:33.991927] [p-6224] [t-6220] [info] keyboard-manager logger is initialized

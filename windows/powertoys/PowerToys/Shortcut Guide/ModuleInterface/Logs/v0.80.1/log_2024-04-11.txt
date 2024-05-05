@@ -1,0 +1,4 @@
+[2024-04-11 19:05:51.341459] [p-9068] [t-13132] [info] shortcut-guide logger is initialized
+[2024-04-11 19:05:51.345795] [p-9068] [t-13132] [trace] GetHotkeyEx()
+[2024-04-11 19:05:52.005618] [p-9068] [t-13132] [info] Shortcut Guide is enabling
+[2024-04-11 19:05:52.005665] [p-9068] [t-13132] [trace] GetHotkeyEx()

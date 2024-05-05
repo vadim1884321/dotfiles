@@ -1,0 +1,2 @@
+[2024-04-18 09:46:13.638552] [p-9196] [t-9200] [info] QuickAccent logger is initialized
+[2024-04-18 09:46:13.639134] [p-9196] [t-9200] [info] Launcher object is constructing

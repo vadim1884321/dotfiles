@@ -1,0 +1,9 @@
+[2024-04-21 17:02:25.597877] [p-14908] [t-8896] [info] shortcut-guide logger is initialized
+[2024-04-21 17:02:25.637202] [p-14908] [t-8896] [trace] Starting Shortcut Guide
+[2024-04-21 17:02:25.637336] [p-14908] [t-8896] [trace] Sending settings telemetry
+[2024-04-21 18:29:49.807967] [p-10560] [t-4408] [info] shortcut-guide logger is initialized
+[2024-04-21 18:29:49.847765] [p-10560] [t-4408] [trace] Starting Shortcut Guide
+[2024-04-21 18:29:49.848040] [p-10560] [t-4408] [info] Overlay Window is creating
+[2024-04-21 18:31:11.219276] [p-10560] [t-4408] [trace] Terminating process
+[2024-04-21 18:31:11.223621] [p-10560] [t-4408] [trace] D2DOverlayWindow::on_hide()
+[2024-04-21 18:31:11.277693] [p-10560] [t-4408] [trace] Duration: 81305. Close Type: MOUSE_BUTTONUP

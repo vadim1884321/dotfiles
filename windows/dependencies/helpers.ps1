@@ -2,29 +2,29 @@
 . ~\dotfiles\dotfiles-windows\helpers.ps1
 
 function Install-Desktop-Apps {
-		Foreach ($app in $install) {
-				#check if the app is already installed
-				$listApp = winget list --exact -q $app.name
-				if (![String]::Join("", $listApp).Contains($app.name)) {
-						Write-host "Installing:" $app.name
-						if ($app.source -ne $null) {
-								winget install --exact --silent $app.name --source $app.source --accept-package-agreements
-						}
-						else {
-								winget install --exact --silent $app.name --accept-package-agreements
-						}
-				}
-				else {
-						Write-host "Skipping Install of " $app.name
-				}
+	Foreach ($app in $install) {
+		#check if the app is already installed
+		$listApp = winget list --exact -q $app.name
+		if (![String]::Join("", $listApp).Contains($app.name)) {
+			Write-host "Installing:" $app.name
+			if ($app.source -ne $null) {
+				winget install --exact --silent $app.name --source $app.source --accept-package-agreements
+			}
+			else {
+				winget install --exact --silent $app.name --accept-package-agreements
+			}
 		}
+		else {
+			Write-host "Skipping Install of " $app.name
+		}
+	}
 }
 
 function Install-Nuget {
-		if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
-			Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
-			Install-PackageProvider -Name "NuGet" -Force;
-		}
+	if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
+		Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
+		Install-PackageProvider -Name "NuGet" -Force;
+	}
 }
 
 function Get-PackageProvider-Installation-Status {
@@ -45,10 +45,10 @@ function Get-PackageProvider-Installation-Status {
 }
 
 function Install-PSGallery {
-		if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
-			Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
-			Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
-		}
+	if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
+		Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
+		Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+	}
 }
 
 function Get-PSRepository-Trusted-Status {
@@ -75,11 +75,11 @@ function Get-PSRepository-Trusted-Status {
 }
 
 function Install-PackageManagement {
-		if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
-			Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
-			[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
-			Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
-		}
+	if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
+		Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
+		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+		Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
+	}
 }
 
 function Get-Module-Installation-Status {

@@ -1,0 +1,4 @@
+[2024-04-15 10:18:18.661945] [p-8624] [t-8628] [info] hosts logger is initialized
+[2024-04-15 10:18:19.196335] [p-8624] [t-8628] [trace] HostsModuleInterface::enable()
+[2024-04-15 11:54:47.342558] [p-7748] [t-7740] [info] hosts logger is initialized
+[2024-04-15 11:54:47.747714] [p-7748] [t-7740] [trace] HostsModuleInterface::enable()

@@ -1,0 +1,1 @@
+[2024-04-18 09:46:12.895318] [p-9196] [t-9200] [info] powerrename logger is initialized

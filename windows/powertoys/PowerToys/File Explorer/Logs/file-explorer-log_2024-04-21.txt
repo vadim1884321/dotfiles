@@ -1,0 +1,4 @@
+[2024-04-21 10:21:37.169935] [p-8668] [t-8672] [info] FileExplorer logger is initialized
+[2024-04-21 10:21:37.170063] [p-8668] [t-8672] [info] Initializing PowerPreviewModule
+[2024-04-21 22:02:24.818559] [p-8068] [t-7976] [info] FileExplorer logger is initialized
+[2024-04-21 22:02:24.818716] [p-8068] [t-7976] [info] Initializing PowerPreviewModule

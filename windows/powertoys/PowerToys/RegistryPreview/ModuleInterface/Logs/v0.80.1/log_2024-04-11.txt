@@ -1,0 +1,3 @@
+[2024-04-11 19:05:51.532269] [p-9068] [t-13132] [info] RegistryPreview logger is initialized
+[2024-04-11 19:05:51.533046] [p-9068] [t-13132] [info] Registry Preview object is constructing
+[2024-04-11 19:05:51.533645] [p-9068] [t-13132] [info] Registry Preview settings are empty

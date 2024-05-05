@@ -1,0 +1,2 @@
+[2024-04-19 11:37:44.000970] [p-8912] [t-8916] [info] cmd-not-found logger is initialized
+[2024-04-19 11:37:44.001329] [p-8912] [t-8916] [info] CmdNotFound object is constructing

@@ -1,0 +1,5 @@
+[2024-04-11 19:05:51.367000] [p-9068] [t-13132] [info] mouse-highlighter logger is initialized
+[2024-04-11 19:05:51.371764] [p-9068] [t-13132] [error] Left click color ARGB value is invalid. Will use default value
+[2024-04-11 19:05:51.371816] [p-9068] [t-13132] [error] Right click color ARGB value is invalid. Will use default value
+[2024-04-11 19:05:52.005787] [p-9068] [t-14016] [info] Starting a highlighter instance.
+[2024-04-11 19:05:52.011775] [p-9068] [t-14016] [info] Initialized the highlighter instance.

@@ -1,0 +1,6 @@
+[2024-04-19 11:37:43.568104] [p-8912] [t-8916] [info] RegistryPreview logger is initialized
+[2024-04-19 11:37:43.568353] [p-8912] [t-8916] [info] Registry Preview object is constructing
+[2024-04-19 11:37:43.568549] [p-8912] [t-8916] [error] unApply of HKCU\Software\Classes\regfile\shell\preview\command\Default:C:\Program Files\PowerToys\WinUI3Apps\PowerToys.RegistryPreview.exe "%1": RegOpenKeyExW failed: ￍ￥ ￳￤￠￥￲￱￿ ￭￠￩￲￨ ￳￪￠￧￠￭￭￻￩ ￴￠￩￫.
+[2024-04-19 11:37:43.568605] [p-8912] [t-8916] [error] unApply of HKCU\Software\Classes\regfile\shell\preview\icon:C:\Program Files\PowerToys\WinUI3Apps\Assets\RegistryPreview\app.ico: RegOpenKeyExW failed: ￍ￥ ￳￤￠￥￲￱￿ ￭￠￩￲￨ ￳￪￠￧￠￭￭￻￩ ￴￠￩￫.
+[2024-04-19 11:37:43.579340] [p-8912] [t-8916] [error] Failed to unapply enabled registry change set.
+[2024-04-19 11:37:43.579968] [p-8912] [t-8916] [info] Registry Preview settings are empty

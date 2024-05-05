@@ -1,0 +1,28 @@
+[2024-04-10 14:54:38.617963] [p-4244] [t-1712] [info] fancyzones logger is initialized
+[2024-04-10 14:54:38.668711] [p-4244] [t-1712] [trace] FancyZonesSettings::LoadSettings Enter
+[2024-04-10 14:54:38.668748] [p-4244] [t-6404] [trace] OnThreadExecutor::worker_thread(loop) Enter
+[2024-04-10 14:54:38.668845] [p-4244] [t-1712] [warning] Failed to read from settings file
+[2024-04-10 14:54:38.668866] [p-4244] [t-1712] [trace] FancyZonesSettings::LoadSettings Exit
+[2024-04-10 14:54:38.669047] [p-4244] [t-1712] [info] layout-templates.json file is missing or malformed
+[2024-04-10 14:54:38.669202] [p-4244] [t-1712] [info] custom-layouts.json file is missing or malformed
+[2024-04-10 14:54:38.669701] [p-4244] [t-1712] [info] layout-hotkeys.json file is missing or malformed
+[2024-04-10 14:54:38.669838] [p-4244] [t-1712] [info] applied-layouts.json file is missing or malformed
+[2024-04-10 14:54:38.669918] [p-4244] [t-1712] [error] app-zone-history.json file is missing or malformed
+[2024-04-10 14:54:38.670040] [p-4244] [t-1712] [info] default-layouts.json file is missing or malformed
+[2024-04-10 14:54:38.675085] [p-4244] [t-6404] [trace] OnThreadExecutor::worker_thread(loop) Exit
+[2024-04-10 14:54:38.675179] [p-4244] [t-6404] [trace] OnThreadExecutor::worker_thread(loop) Enter
+[2024-04-10 14:54:38.677099] [p-4244] [t-1712] [info] Identifying monitors
+[2024-04-10 14:54:38.677365] [p-4244] [t-1712] [info] Get display device for display \\.\DISPLAY1 : \\?\DISPLAY#WLD2700#5&340a2d70&1&UID268#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}
+[2024-04-10 14:54:38.710852] [p-4244] [t-1712] [info] InstanceName: DISPLAY\WLD2700\5&340a2d70&1&UID268_0
+[2024-04-10 14:54:38.710889] [p-4244] [t-1712] [info] Serial number: 1
+[2024-04-10 14:54:38.711374] [p-4244] [t-1712] [info] Display changed, type: Initialization
+[2024-04-10 14:54:38.711400] [p-4244] [t-1712] [debug] Update work areas, update windows positions: false
+[2024-04-10 14:54:38.711435] [p-4244] [t-1712] [info] Identifying monitors
+[2024-04-10 14:54:38.711625] [p-4244] [t-1712] [info] Get display device for display \\.\DISPLAY1 : \\?\DISPLAY#WLD2700#5&340a2d70&1&UID268#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}
+[2024-04-10 14:54:38.716297] [p-4244] [t-1712] [info] InstanceName: DISPLAY\WLD2700\5&340a2d70&1&UID268_0
+[2024-04-10 14:54:38.716347] [p-4244] [t-1712] [info] Serial number: 1
+[2024-04-10 14:54:38.716862] [p-4244] [t-1712] [trace] Monitor was added or removed
+[2024-04-10 14:54:38.716899] [p-4244] [t-1712] [debug] Add new work area on virtual desktop {9360B682-026C-41CB-BCDE-00E627F7E055}
+[2024-04-10 14:54:38.717822] [p-4244] [t-1712] [info] Creating new ZonesOverlay window, hWnd = 0xf0746
+[2024-04-10 14:54:38.779004] [p-4244] [t-1712] [info] Initialize layout on WLD2700_5&340a2d70&1&UID268_1_1_{9360B682-026C-41CB-BCDE-00E627F7E055}, work area rect = 1920x1080
+[2024-04-10 14:54:38.779057] [p-4244] [t-1712] [info] Set default layout on WLD2700_5&340a2d70&1&UID268_1_1_{9360B682-026C-41CB-BCDE-00E627F7E055}

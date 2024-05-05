@@ -1,0 +1,6 @@
+[2024-04-10 14:54:37.950471] [p-2292] [t-948] [info] launcher logger is initialized
+[2024-04-10 14:54:37.950580] [p-2292] [t-948] [info] Launcher object is constructing
+[2024-04-10 14:54:38.445461] [p-2292] [t-948] [trace] Launching PowerToys Awake process
+[2024-04-10 14:54:38.445504] [p-2292] [t-948] [trace] PowerToys Awake launching with parameters: --use-pt-config --pid 2292
+[2024-04-10 14:55:47.727273] [p-2292] [t-948] [trace] Disabling Awake...
+[2024-04-10 14:55:47.727342] [p-2292] [t-948] [trace] Signaled exit event for PowerToys Awake.

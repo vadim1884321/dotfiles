@@ -1,0 +1,12 @@
+[2024-04-10 14:54:37.882586] [p-2292] [t-948] [info] launcher logger is initialized
+[2024-04-10 14:54:37.882720] [p-2292] [t-948] [info] Launcher object is constructing
+[2024-04-10 14:54:37.882878] [p-2292] [t-948] [info] PT Run settings are empty
+[2024-04-10 14:54:37.882901] [p-2292] [t-948] [info] PT Run is going to use default shortcut
+[2024-04-10 14:54:41.364714] [p-2292] [t-948] [info] Microsoft_Launcher::enable() begin
+[2024-04-10 14:54:41.364793] [p-2292] [t-948] [trace] Signaled exitEvent
+[2024-04-10 14:54:41.364849] [p-2292] [t-948] [trace] Starting PowerToys Run from not elevated process
+[2024-04-10 14:54:41.399544] [p-2292] [t-948] [trace] Started PowerToys Run
+[2024-04-10 14:54:41.399580] [p-2292] [t-948] [info] Microsoft_Launcher::enable() end
+[2024-04-10 14:54:41.403350] [p-2292] [t-5872] [info] Send settings telemetry
+[2024-04-10 14:58:02.545741] [p-2292] [t-948] [info] Launcher is disabling
+[2024-04-10 14:58:02.545779] [p-2292] [t-948] [trace] Signaled exitEvent

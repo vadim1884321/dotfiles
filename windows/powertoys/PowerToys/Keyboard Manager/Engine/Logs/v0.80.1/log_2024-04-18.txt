@@ -1,0 +1,2 @@
+[2024-04-18 09:46:14.831936] [p-9452] [t-9456] [info] keyboard-manager logger is initialized
+[2024-04-18 09:46:14.920045] [p-9452] [t-9456] [trace] SettingsHelper::LoadSettings()

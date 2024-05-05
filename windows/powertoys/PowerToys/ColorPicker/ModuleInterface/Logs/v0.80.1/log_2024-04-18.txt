@@ -1,0 +1,4 @@
+[2024-04-18 09:46:13.047324] [p-9196] [t-9200] [info] ColorPicker logger is initialized
+[2024-04-18 09:46:14.577236] [p-9196] [t-9200] [trace] ColorPicker::enable()
+[2024-04-18 09:46:14.577326] [p-9196] [t-9200] [trace] Starting ColorPicker process
+[2024-04-18 09:46:14.690742] [p-9196] [t-9200] [trace] Successfully started the Color Picker process

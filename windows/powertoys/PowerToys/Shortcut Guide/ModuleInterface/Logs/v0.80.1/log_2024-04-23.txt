@@ -1,0 +1,14 @@
+[2024-04-23 09:15:29.871652] [p-7544] [t-7548] [info] shortcut-guide logger is initialized
+[2024-04-23 09:15:29.877894] [p-7544] [t-7548] [trace] GetHotkeyEx()
+[2024-04-23 09:15:33.100139] [p-7544] [t-7548] [info] Shortcut Guide is enabling
+[2024-04-23 09:15:33.100228] [p-7544] [t-7548] [trace] GetHotkeyEx()
+[2024-04-23 13:41:17.301293] [p-8132] [t-8136] [info] shortcut-guide logger is initialized
+[2024-04-23 13:41:17.312933] [p-8132] [t-8136] [trace] GetHotkeyEx()
+[2024-04-23 13:41:19.326904] [p-8132] [t-8136] [info] Shortcut Guide is enabling
+[2024-04-23 13:41:19.326988] [p-8132] [t-8136] [trace] GetHotkeyEx()
+[2024-04-23 17:02:25.412193] [p-8132] [t-9336] [trace] Send settings telemetry
+[2024-04-23 17:02:25.507484] [p-8132] [t-9336] [trace] Started SG process with pid=12112
+[2024-04-23 18:16:34.546745] [p-8684] [t-8688] [info] shortcut-guide logger is initialized
+[2024-04-23 18:16:34.571055] [p-8684] [t-8688] [trace] GetHotkeyEx()
+[2024-04-23 18:16:36.025105] [p-8684] [t-8688] [info] Shortcut Guide is enabling
+[2024-04-23 18:16:36.025554] [p-8684] [t-8688] [trace] GetHotkeyEx()

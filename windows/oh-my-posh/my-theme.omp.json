@@ -7,7 +7,7 @@
         {
           "foreground": "lightYellow",
           "style": "plain",
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "type": "os",
           "properties": {
             "windows": "<#0078d3>\uE62A</>",

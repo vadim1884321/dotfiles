@@ -1,0 +1,300 @@
+[14:55:34.2001353] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for AlwaysOnTop was not found.
+[14:55:34.2320132] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for CropAndLock was not found.
+[14:55:34.2355106] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for FancyZones was not found.
+[14:55:34.2406954] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for FindMyMouse was not found.
+[14:55:34.2447331] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for Keyboard Manager was not found.
+[14:55:34.2492028] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file default.json for Keyboard Manager was not found.
+[14:55:34.2583102] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for MouseHighlighter was not found.
+[14:55:34.2615333] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for MouseJump was not found.
+[14:55:34.2646278] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for MousePointerCrosshairs was not found.
+[14:55:34.2674726] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for PastePlain was not found.
+[14:55:34.2695997] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for Peek was not found.
+[14:55:34.3053033] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for QuickAccent was not found.
+[14:55:34.3125557] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for Measure Tool was not found.
+[14:55:34.3157855] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for Shortcut Guide was not found.
+[14:55:34.3186283] [Info] SettingsUtils::GetSettingsOrDefault
+    Settings file settings.json for TextExtractor was not found.
+[14:58:57.8807997] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\settings.json does not exists.
+[14:58:57.8813676] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\settings.json, dryRun:True.
+[14:58:57.8817474] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\AlwaysOnTop\settings.json does not exists.
+[14:58:57.8820893] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\AlwaysOnTop\settings.json, dryRun:True.
+[14:58:57.8827916] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Awake\settings.json does not exists.
+[14:58:57.8831427] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Awake\settings.json, dryRun:True.
+[14:58:57.8834370] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\ColorPicker\settings.json does not exists.
+[14:58:57.8837372] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\ColorPicker\settings.json, dryRun:True.
+[14:58:57.8839411] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\CropAndLock\settings.json does not exists.
+[14:58:57.8859644] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\CropAndLock\settings.json, dryRun:True.
+[14:58:57.8864836] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\FancyZones\settings.json does not exists.
+[14:58:57.8869687] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\FancyZones\settings.json, dryRun:True.
+[14:58:57.8871526] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\File Locksmith\file-locksmith-settings.json does not exists.
+[14:58:57.8874009] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\File Locksmith\file-locksmith-settings.json, dryRun:True.
+[14:58:57.8875906] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\FindMyMouse\settings.json does not exists.
+[14:58:57.8878552] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\FindMyMouse\settings.json, dryRun:True.
+[14:58:57.8884746] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Image Resizer\image-resizer-settings.json does not exists.
+[14:58:57.8888587] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Image Resizer\image-resizer-settings.json, dryRun:True.
+[14:58:57.8890761] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Keyboard Manager\default.json does not exists.
+[14:58:57.8893864] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Keyboard Manager\default.json, dryRun:True.
+[14:58:57.8895359] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Keyboard Manager\settings.json does not exists.
+[14:58:57.8896383] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Keyboard Manager\settings.json, dryRun:True.
+[14:58:57.8898200] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Measure Tool\settings.json does not exists.
+[14:58:57.8900576] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Measure Tool\settings.json, dryRun:True.
+[14:58:57.8902330] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MouseHighlighter\settings.json does not exists.
+[14:58:57.8904710] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\MouseHighlighter\settings.json, dryRun:True.
+[14:58:57.8906286] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MouseJump\settings.json does not exists.
+[14:58:57.8908588] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\MouseJump\settings.json, dryRun:True.
+[14:58:57.8910415] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MousePointerCrosshairs\settings.json does not exists.
+[14:58:57.8912793] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\MousePointerCrosshairs\settings.json, dryRun:True.
+[14:58:57.8914356] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PastePlain\settings.json does not exists.
+[14:58:57.8917114] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\PastePlain\settings.json, dryRun:True.
+[14:58:57.8918718] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Peek\settings.json does not exists.
+[14:58:57.8920990] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Peek\settings.json, dryRun:True.
+[14:58:57.8922427] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PowerRename\power-rename-settings.json does not exists.
+[14:58:57.8924855] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\PowerRename\power-rename-settings.json, dryRun:True.
+[14:58:57.8947713] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PowerToys Run\settings.json does not exists.
+[14:58:57.8951713] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\PowerToys Run\settings.json, dryRun:True.
+[14:58:57.8953784] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\QuickAccent\settings.json does not exists.
+[14:58:57.8956328] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\QuickAccent\settings.json, dryRun:True.
+[14:58:57.8958510] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Shortcut Guide\settings.json does not exists.
+[14:58:57.8961482] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\Shortcut Guide\settings.json, dryRun:True.
+[14:58:57.8963470] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\TextExtractor\settings.json does not exists.
+[14:58:57.8967994] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572239378746747\TextExtractor\settings.json, dryRun:True.
+[14:58:57.8994047] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings took 48
+[15:00:11.8581345] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\settings.json does not exists.
+[15:00:11.8586165] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\settings.json, dryRun:True.
+[15:00:11.8588160] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\AlwaysOnTop\settings.json does not exists.
+[15:00:11.8590429] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\AlwaysOnTop\settings.json, dryRun:True.
+[15:00:11.8591938] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Awake\settings.json does not exists.
+[15:00:11.8594315] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Awake\settings.json, dryRun:True.
+[15:00:11.8596432] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\ColorPicker\settings.json does not exists.
+[15:00:11.8598803] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\ColorPicker\settings.json, dryRun:True.
+[15:00:11.8600389] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\CropAndLock\settings.json does not exists.
+[15:00:11.8604755] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\CropAndLock\settings.json, dryRun:True.
+[15:00:11.8607972] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\FancyZones\settings.json does not exists.
+[15:00:11.8610565] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\FancyZones\settings.json, dryRun:True.
+[15:00:11.8611883] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\File Locksmith\file-locksmith-settings.json does not exists.
+[15:00:11.8614402] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\File Locksmith\file-locksmith-settings.json, dryRun:True.
+[15:00:11.8616248] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\FindMyMouse\settings.json does not exists.
+[15:00:11.8618765] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\FindMyMouse\settings.json, dryRun:True.
+[15:00:11.8620012] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Image Resizer\image-resizer-settings.json does not exists.
+[15:00:11.8623876] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Image Resizer\image-resizer-settings.json, dryRun:True.
+[15:00:11.8625525] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Keyboard Manager\default.json does not exists.
+[15:00:11.8627922] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Keyboard Manager\default.json, dryRun:True.
+[15:00:11.8629333] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Keyboard Manager\settings.json does not exists.
+[15:00:11.8630304] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Keyboard Manager\settings.json, dryRun:True.
+[15:00:11.8631797] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Measure Tool\settings.json does not exists.
+[15:00:11.8634097] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Measure Tool\settings.json, dryRun:True.
+[15:00:11.8635737] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MouseHighlighter\settings.json does not exists.
+[15:00:11.8638018] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\MouseHighlighter\settings.json, dryRun:True.
+[15:00:11.8639859] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MouseJump\settings.json does not exists.
+[15:00:11.8642532] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\MouseJump\settings.json, dryRun:True.
+[15:00:11.8644551] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MousePointerCrosshairs\settings.json does not exists.
+[15:00:11.8646890] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\MousePointerCrosshairs\settings.json, dryRun:True.
+[15:00:11.8648477] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PastePlain\settings.json does not exists.
+[15:00:11.8650774] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\PastePlain\settings.json, dryRun:True.
+[15:00:11.8652294] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Peek\settings.json does not exists.
+[15:00:11.8654548] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Peek\settings.json, dryRun:True.
+[15:00:11.8655890] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PowerRename\power-rename-settings.json does not exists.
+[15:00:11.8658159] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\PowerRename\power-rename-settings.json, dryRun:True.
+[15:00:11.8679299] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PowerToys Run\settings.json does not exists.
+[15:00:11.8681791] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\PowerToys Run\settings.json, dryRun:True.
+[15:00:11.8683482] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\QuickAccent\settings.json does not exists.
+[15:00:11.8685996] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\QuickAccent\settings.json, dryRun:True.
+[15:00:11.8687647] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Shortcut Guide\settings.json does not exists.
+[15:00:11.8690021] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\Shortcut Guide\settings.json, dryRun:True.
+[15:00:11.8691613] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\TextExtractor\settings.json does not exists.
+[15:00:11.8695290] [Info] SettingsBackupAndRestoreUtils::BackupSettingsInternal
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572240118576856\TextExtractor\settings.json, dryRun:True.
+[15:00:11.8696785] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings took 18
+[16:23:42.2264254] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\settings.json does not exists.
+[16:23:42.2270319] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\settings.json, dryRun:True.
+[16:23:42.2272237] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\AlwaysOnTop\settings.json does not exists.
+[16:23:42.2274527] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\AlwaysOnTop\settings.json, dryRun:True.
+[16:23:42.2275960] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Awake\settings.json does not exists.
+[16:23:42.2278207] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Awake\settings.json, dryRun:True.
+[16:23:42.2279921] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\ColorPicker\settings.json does not exists.
+[16:23:42.2282461] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\ColorPicker\settings.json, dryRun:True.
+[16:23:42.2283874] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\CropAndLock\settings.json does not exists.
+[16:23:42.2307245] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\CropAndLock\settings.json, dryRun:True.
+[16:23:42.2311407] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\FancyZones\settings.json does not exists.
+[16:23:42.2315969] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\FancyZones\settings.json, dryRun:True.
+[16:23:42.2318381] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\File Locksmith\file-locksmith-settings.json does not exists.
+[16:23:42.2321271] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\File Locksmith\file-locksmith-settings.json, dryRun:True.
+[16:23:42.2323172] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\FindMyMouse\settings.json does not exists.
+[16:23:42.2325519] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\FindMyMouse\settings.json, dryRun:True.
+[16:23:42.2326780] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Image Resizer\image-resizer-settings.json does not exists.
+[16:23:42.2329014] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Image Resizer\image-resizer-settings.json, dryRun:True.
+[16:23:42.2330460] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Keyboard Manager\default.json does not exists.
+[16:23:42.2332647] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Keyboard Manager\default.json, dryRun:True.
+[16:23:42.2334002] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Keyboard Manager\settings.json does not exists.
+[16:23:42.2334919] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Keyboard Manager\settings.json, dryRun:True.
+[16:23:42.2336228] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Measure Tool\settings.json does not exists.
+[16:23:42.2338408] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Measure Tool\settings.json, dryRun:True.
+[16:23:42.2339844] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MouseHighlighter\settings.json does not exists.
+[16:23:42.2342056] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\MouseHighlighter\settings.json, dryRun:True.
+[16:23:42.2343427] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MouseJump\settings.json does not exists.
+[16:23:42.2345699] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\MouseJump\settings.json, dryRun:True.
+[16:23:42.2347209] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\MousePointerCrosshairs\settings.json does not exists.
+[16:23:42.2349514] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\MousePointerCrosshairs\settings.json, dryRun:True.
+[16:23:42.2350939] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PastePlain\settings.json does not exists.
+[16:23:42.2353569] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\PastePlain\settings.json, dryRun:True.
+[16:23:42.2355216] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Peek\settings.json does not exists.
+[16:23:42.2357643] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Peek\settings.json, dryRun:True.
+[16:23:42.2359276] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PowerRename\power-rename-settings.json does not exists.
+[16:23:42.2361782] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\PowerRename\power-rename-settings.json, dryRun:True.
+[16:23:42.2374115] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\PowerToys Run\settings.json does not exists.
+[16:23:42.2378793] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\PowerToys Run\settings.json, dryRun:True.
+[16:23:42.2380969] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\QuickAccent\settings.json does not exists.
+[16:23:42.2383507] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\QuickAccent\settings.json, dryRun:True.
+[16:23:42.2385035] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Shortcut Guide\settings.json does not exists.
+[16:23:42.2387320] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\Shortcut Guide\settings.json, dryRun:True.
+[16:23:42.2388665] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings, C:\Users\vadim\AppData\Local\Microsoft\PowerToys\TextExtractor\settings.json does not exists.
+[16:23:42.2392853] [Info] SettingsBackupAndRestoreUtils::BackupSettings
+    BackupSettings writing, C:\Users\vadim\AppData\Local\Temp\settings_133572290222259412\TextExtractor\settings.json, dryRun:True.
+[16:23:42.2394399] [Info] SettingsBackupAndRestoreUtils::DryRunBackup
+    BackupSettings took 20

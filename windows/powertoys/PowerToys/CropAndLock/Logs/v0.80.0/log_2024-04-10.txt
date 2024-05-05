@@ -1,0 +1,2 @@
+[2024-04-10 14:54:38.564425] [p-7492] [t-8480] [info] crop-and-lock logger is initialized
+[2024-04-10 14:56:00.284822] [p-7492] [t-12400] [trace] Received an exit event.

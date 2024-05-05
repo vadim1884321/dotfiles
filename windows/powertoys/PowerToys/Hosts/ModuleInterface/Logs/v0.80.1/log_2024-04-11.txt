@@ -1,0 +1,2 @@
+[2024-04-11 19:05:51.658171] [p-9068] [t-13132] [info] hosts logger is initialized
+[2024-04-11 19:05:51.903401] [p-9068] [t-13132] [trace] HostsModuleInterface::enable()

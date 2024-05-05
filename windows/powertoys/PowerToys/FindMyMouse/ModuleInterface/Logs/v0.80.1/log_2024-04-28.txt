@@ -1,0 +1,4 @@
+[2024-04-28 10:59:04.379890] [p-7560] [t-7784] [info] find-my-mouse logger is initialized
+[2024-04-28 10:59:04.382597] [p-7560] [t-7784] [trace] GetHotkeyEx()
+[2024-04-28 12:17:41.311516] [p-2520] [t-2464] [info] find-my-mouse logger is initialized
+[2024-04-28 12:17:41.314763] [p-2520] [t-2464] [trace] GetHotkeyEx()

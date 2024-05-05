@@ -1,0 +1,2 @@
+[2024-04-13 10:09:03.373413] [p-8808] [t-8812] [info] powerrename logger is initialized
+[2024-04-13 11:20:15.097425] [p-7972] [t-8164] [info] powerrename logger is initialized

@@ -1,0 +1,46 @@
+[14:54:38.6479198] [Info] Program::Main
+    Launching Awake...
+[14:54:38.6536437] [Info] Program::Main
+    0.80.0.0
+[14:54:38.6538087] [Info] Program::Main
+    Build: ATRIOX_04132023
+[14:54:38.6545590] [Info] Program::Main
+    OS: Microsoft Windows NT 10.0.22631.0
+[14:54:38.6865964] [Info] Program::Main
+    OS Build: Windows 10 Pro 23H2 22621.1.amd64fre.ni_release.220506-1250
+[14:54:38.7186727] [Info] Program::Main
+    {}
+[14:54:38.7188927] [Info] Program::Main
+    Parsing parameters...
+[14:54:38.7772054] [Info] Program::HandleCommandLineArguments
+    The value for --use-pt-config is: True
+[14:54:38.7780051] [Info] Program::HandleCommandLineArguments
+    The value for --display-on is: True
+[14:54:38.7781436] [Info] Program::HandleCommandLineArguments
+    The value for --time-limit is: 0
+[14:54:38.7782222] [Info] Program::HandleCommandLineArguments
+    The value for --pid is: 2292
+[14:54:38.7782872] [Info] Program::HandleCommandLineArguments
+    The value for --expire-at is: 
+[14:54:38.7962733] [Info] <>c__DisplayClass9_0::<InitializeTray>b__0
+    Setting up the tray.
+[14:54:38.7977619] [Info] Program::HandleCommandLineArguments
+    Reading configuration file: C:\Users\vadim\AppData\Local\Microsoft\PowerToys\Awake\settings.json
+[14:54:38.8579132] [Info] Program::ProcessSettings
+    Identified custom time shortcuts for the tray: 0
+[14:54:38.8583146] [Info] Program::SetupNoKeepAwake
+    Operating in passive mode (computer's standard power plan). No custom keep awake settings enabled.
+[14:54:38.8636080] [Info] Manager::CancelExistingThread
+    Attempting to ensure that the thread is properly cleaned up...
+[14:54:38.8644953] [Info] Manager::CancelExistingThread
+    Instantiating of new token source and thread token completed.
+[14:54:38.8671134] [Info] <>c::<StartMonitor>b__9_0
+    Setting state to ES_CONTINUOUS
+[14:55:47.7276008] [Info] Program::Exit
+    Received a signal to end the process. Making sure we quit...
+[14:55:47.7280599] [Info] Manager::CancelExistingThread
+    Attempting to ensure that the thread is properly cleaned up...
+[14:55:47.7282502] [Info] Manager::CancelExistingThread
+    Instantiating of new token source and thread token completed.
+[14:55:47.7282902] [Info] <>c::<StartMonitor>b__9_0
+    Setting state to ES_CONTINUOUS
