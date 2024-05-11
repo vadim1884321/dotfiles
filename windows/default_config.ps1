@@ -7,6 +7,7 @@ $git_settings = @{user = 'vadim'; email = 'vadim@domain.com' }
 # to the choco.
 # @(program, args)
 $install = @(
+	@{name = "Microsoft.WindowsTerminal"; source = "msstore" },
 	@{name = "Git.Git" },
 	@{name = "GitHub.cli" },
 	@{name = "Microsoft.PowerShell" },

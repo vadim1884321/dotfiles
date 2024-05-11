@@ -1,11 +1,10 @@
-function Set-ScreenRefreshRate
-{
-		param (
-				[Parameter(Mandatory=$true)]
-				[int] $Frequency
-		)
+function Set-ScreenRefreshRate {
+	param (
+		[Parameter(Mandatory = $true)]
+		[int] $Frequency
+	)
 
-		$pinvokeCode = @"
+	$pinvokeCode = @"
 				using System;
 				using System.Runtime.InteropServices;
 
@@ -126,18 +125,17 @@ function Set-ScreenRefreshRate
 				}
 "@ # don't indend this line
 
-		Add-Type $pinvokeCode -ErrorAction SilentlyContinue
+	Add-Type $pinvokeCode -ErrorAction SilentlyContinue
 
-		[Display.PrimaryScreen]::ChangeRefreshRate($frequency)
+	[Display.PrimaryScreen]::ChangeRefreshRate($frequency)
 }
 
-function Get-ScreenRefreshRate
-{
-		$frequency = Get-WmiObject -Class "Win32_VideoController" | Select-Object -ExpandProperty "CurrentRefreshRate"
+function Get-ScreenRefreshRate {
+	$frequency = Get-WmiObject -Class "Win32_VideoController" | Select-Object -ExpandProperty "CurrentRefreshRate"
 
-		return $frequency
+	return $frequency
 }
 
-$currentFrequency = Get-ScreenRefreshRate
-$newFrequency     = 75
+Get-ScreenRefreshRate
+$newFrequency = 75
 Set-ScreenRefreshRate -Frequency $newFrequency

@@ -1,4 +1,6 @@
 ﻿ConvertFrom-StringData -StringData @'
+CreateRestorePoint                        = Создать точку восстановления
+testEnable                                = Включено
 UnsupportedOSBuild                        = Скрипт поддерживает Windows 11 23H2+.
 UpdateWarning                             = Ваш билд Windows 11: {0}.{1}. Поддерживаемые сборки: {2}+. Запустите обновление Windows и попробуйте заново.
 UnsupportedLanguageMode                   = Сессия PowerShell работает в ограниченном режиме.

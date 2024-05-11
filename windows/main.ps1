@@ -185,6 +185,10 @@ BrowsingHistory -Hide
 
 #region UI & Personalization
 
+# Add support for JPEG-XL image format thumbnails
+# Добавить поддержку миниатюр графического формата JPEG-XL
+JXLWinthumb
+
 # Show hidden files, folders, and drives
 # Отобразить скрытые файлы, папки и диски
 HiddenItems -Enable
@@ -200,6 +204,22 @@ FileExtensions -Show
 # Hide file name extensions (default value)
 # Скрывать расширения имён файлов файлов (значение по умолчанию)
 # FileExtensions -Hide
+
+# Enable the classic context menu
+# Включить классическое контекстное меню
+# ClassicContextMenu -Enable
+
+# Turn off the classic context menu, return the modern context menu (default value)
+# Выключить классическое контекстное меню, вернуть современное контекстное меню (значение по умолчанию)
+ClassicContextMenu -Disable
+
+# Hide the gallery in Windows Explorer
+# Скрыть галлерею в проводнике Windows
+Gallery -Hide
+
+# Show the gallery in Windows Explorer (default value)
+# Отобразить галлерею в проводнике Windows (значение по умолчанию)
+# Gallery -Show
 
 # Show the file transfer dialog box in the detailed mode
 # Отображать диалоговое окно передачи файлов в развернутом виде
@@ -243,11 +263,11 @@ TaskbarWidgets -Hide
 
 # Show the search icon and label on the taskbar
 # Показать значок и метку поиска на панели задач
-# TaskbarSearch -SearchIconLabel
+TaskbarSearch -SearchIconLabel
 
 # Show the search box on the taskbar (default value)
 # Показать поле поиска на панели задач (значение по умолчанию)
-TaskbarSearch -SearchBox
+# TaskbarSearch -SearchBox
 
 # Hide search highlights
 # Скрыть главное в поиске
@@ -280,10 +300,6 @@ PreventTeamsInstallation -Enable
 # Show the Chat icon (Microsoft Teams) on the taskbar and remove block from installing Microsoft Teams for new users (default value)
 # Отобразить кнопку чата (Microsoft Teams) на панели задач и убрать блокировку на устанвоку Microsoft Teams для новых пользователей (значение по умолчанию)
 # PreventTeamsInstallation -Disable
-
-# Unpin the "Microsoft Edge", "Microsoft Store" shortcuts from the taskbar
-# Открепить ярлыки "Microsoft Edge", "Microsoft Store" от панели задач
-UnpinTaskbarShortcuts -Shortcuts Edge, Store
 
 # View the Control Panel icons by large icons
 # Просмотр иконок Панели управления как: крупные значки
@@ -422,11 +438,11 @@ BSoDStopError -Enable
 
 # Choose when to be notified about changes to your computer: never notify
 # Настройка уведомления об изменении параметров компьютера: никогда не уведомлять
-AdminApprovalMode -Never
+# AdminApprovalMode -Never
 
 # Choose when to be notified about changes to your computer: notify me only when apps try to make changes to my computer (default value)
 # Настройка уведомления об изменении параметров компьютера: уведомлять меня только при попытках приложений внести изменения в компьютер (значение по умолчанию)
-# AdminApprovalMode -Default
+AdminApprovalMode -Default
 
 # Turn on access to mapped drives from app running with elevated permissions with Admin Approval Mode enabled
 # Включить доступ к сетевым дискам при включенном режиме одобрения администратором при доступе из программ, запущенных с повышенными правами
@@ -623,4 +639,4 @@ OpenWindowsTerminalAdminContext -Enable
 # Не открывать Windows Terminal из контекстного меню от имени администратора по умолчанию (значение по умолчанию)
 # OpenWindowsTerminalAdminContext -Disable
 
-Write-Host "✔️ Finished!" -ForegroundColor "Green"
+Write-Host "✔️ Finished!55" -ForegroundColor "Green"

@@ -1,85 +1,86 @@
 ﻿ConvertFrom-StringData -StringData @'
-UnsupportedOSBuild                        = 脚本支持Windows 11 23H2+。
-UpdateWarning                             = 您的Windows 11构建: {0}.{1}。支持的构建: {2}+。运行Windows Update并再次尝试。
-UnsupportedLanguageMode                   = PowerShell会话在有限的语言模式下运行。
-LoggedInUserNotAdmin                      = 登录的用户没有管理员的权利。
-UnsupportedPowerShell                     = 你想通过PowerShell {0}.{1}运行脚本。在适当的PowerShell版本中运行该脚本。
-PowerShellx86Warning                      = 您正尝试在 PowerShell (x86) 中运行脚本。在 PowerShell (x64) 中运行脚本。
-UnsupportedHost                           = 该脚本不支持通过{0}运行。
-Win10TweakerWarning                       = 可能你的操作系统是通过"Win 10 Tweaker"后门感染的。
-TweakerWarning                            = Windows的稳定性可能已被{0}所破坏。预防性地，重新安装整个操作系统。
-Bin                                       = bin文件夹中没有文件。请重新下载该档案。
-RebootPending                             = 计算机正在等待重新启动。
-UnsupportedRelease                        = 找到新版本。
-KeyboardArrows                            = 请使用键盘上的方向键{0}和{1}选择您的答案
-CustomizationWarning                      = 在运行Sophia Script之前，您是否已自定义{0}预设文件中的每个函数？
-WindowsComponentBroken                    = {0} 损坏或从操作系统中删除。
-UpdateDefender                            = Microsoft Defender的定义已经过期。运行Windows Update并再次尝试。
-ControlledFolderAccessDisabled            = "受控文件夹访问"已禁用。
-InitialActionsCheckFailed                 = 无法从{0}预置文件中加载 "InitialActions "功能。
-ScheduledTasks                            = 计划任务
-OneDriveUninstalling                      = 卸载OneDrive.....
-OneDriveInstalling                        = OneDrive正在安装.....
-OneDriveDownloading                       = 正在下载OneDrive.....
-OneDriveWarning                           = 只有当预设被配置为删除OneDrive（或应用程序已经被删除）时，才会应用"{0}"功能，否则OneDrive中 "桌面 "和 "图片 "文件夹的备份功能就会中断。
-WindowsFeaturesTitle                      = Windows功能
-OptionalFeaturesTitle                     = 可选功能
-EnableHardwareVT                          = UEFI中开启虚拟化。
-UserShellFolderNotEmpty                   = 一些文件留在了"{0}"文件夹。请手动将它们移到一个新位置。
-UserFolderLocationMove                    = 不应将用户文件夹位置更改为 C 盘根目录。
-RetrievingDrivesList                      = 取得驱动器列表.....
-DriveSelect                               = 选择将在其根目录中创建"{0}"文件夹的驱动器。
-CurrentUserFolderLocation                 = 当前"{0}"文件夹的位置:"{1}"。
-UserFolderRequest                         = 是否要更改"{0}"文件夹位置？
-UserDefaultFolder                         = 您想将"{0}"文件夹的位置更改为默认值吗？
-ReservedStorageIsInUse                    = 保留存储空间正在使用时不支持此操作\n请在电脑重启后重新运行"{0}"功能。
-ShortcutPinning                           = "{0}"快捷方式将被固定到开始菜单.....
-SSDRequired                               = 要在您的设备上使用Windows Subsystem for Android™，您的电脑需要安装固态驱动器（SSD）。
-UninstallUWPForAll                        = 对于所有用户
-UWPAppsTitle                              = UWP应用
-GraphicsPerformanceTitle                  = 是否将所选应用程序的图形性能设置设为"高性能"？
-ActionCenter                              = 为了使用"{0}"功能，你必须启用行动中心。
-WindowsScriptHost                         = 没有在该机执行 Windows 脚本宿主的权限。请与系统管理员联系。 为了使用"{0}"功能，你必须启用Windows脚本主机。
-ScheduledTaskPresented                    = "{0}"函数已经被创建为"{1}"。
-CleanupTaskNotificationTitle              = Windows清理
-CleanupTaskNotificationEvent              = 运行任务以清理Windows未使用的文件和更新？
-CleanupTaskDescription                    = 使用内置磁盘清理工具清理未使用的Windows文件和更新。
-CleanupNotificationTaskDescription        = 关于清理Windows未使用的文件和更新的弹出通知提醒。
-SoftwareDistributionTaskNotificationEvent = Windows更新缓存已成功删除。
-TempTaskNotificationEvent                 = 临时文件文件夹已成功清理。
-FolderTaskDescription                     = "{0}"文件夹清理。
-EventViewerCustomViewName                 = 进程创建
-EventViewerCustomViewDescription          = 进程创建和命令行审核事件。
-RestartWarning                            = 确保重启电脑。
-ErrorsLine                                = 行
-ErrorsMessage                             = 错误/警告
-DialogBoxOpening                          = 显示对话窗口.....
-Disable                                   = 禁用
-Enable                                    = 启用
-UserChoiceWarning                         = 微软在发布 KB5034765 时阻止了对 .pdf 扩展和 http/https 协议的 UserChoice 密钥的写入访问。
-AllFilesFilter                            = 所有文件
-FolderSelect                              = 选择一个文件夹
-FilesWontBeMoved                          = 文件将不会被移动。
-Install                                   = 安装
-NoData                                    = 无数据。
-NoInternetConnection                      = 无网络连接。
-RestartFunction                           = 请重新运行"{0}"函数。
-NoResponse                                = 无法建立{0}。
-Restore                                   = 恢复
-Run                                       = 运行
-Skipped                                   = 已跳过。
-GPOUpdate                                 = GPO更新.....
-TelegramGroupTitle                        = 加入我们的官方Telegram 群。
-TelegramChannelTitle                      = 加入我们的官方Telegram 频道。
-DiscordChannelTitle                       = 加入我们的官方Discord 频道。
-Uninstall                                 = 卸载
+CreateRestorePoint                        = Create a restore point
+UnsupportedOSBuild                        = The script supports Windows 11 23H2+.
+UpdateWarning                             = Your Windows 11 build: {0}.{1}. Supported builds: {2}+. Run Windows Update and try again.
+UnsupportedLanguageMode                   = The PowerShell session in running in a limited language mode.
+LoggedInUserNotAdmin                      = The logged-on user doesn't have admin rights.
+UnsupportedPowerShell                     = You're trying to run script via PowerShell {0}.{1}. Run the script in the appropriate PowerShell version.
+PowerShellx86Warning                      = You're trying to run script via PowerShell (x86). Run the script in PowerShell (x64).
+UnsupportedHost                           = The script doesn't support running via {0}.
+Win10TweakerWarning                       = Probably your OS was infected via the Win 10 Tweaker backdoor.
+TweakerWarning                            = The Windows stability may have been compromised by using {0}. Just in case, reinstall Windows.
+Bin                                       = There are no files in the bin folder. Please, re-download the archive.
+RebootPending                             = The PC is waiting to be restarted.
+UnsupportedRelease                        = A new version found.
+KeyboardArrows                            = Please use the arrow keys {0} and {1} on your keyboard to select your answer
+CustomizationWarning                      = Have you customized every function in the {0} preset file before running Sophia Script?
+WindowsComponentBroken                    = {0} broken or removed from Windows.
+UpdateDefender                            = Microsoft Defender definitions are out-of-date. Run Windows Update and try again.
+ControlledFolderAccessDisabled            = Controlled folder access disabled.
+InitialActionsCheckFailed                 = "InitialActions" function cannot be loaded from the {0} preset file.
+ScheduledTasks                            = Scheduled tasks
+OneDriveUninstalling                      = Uninstalling OneDrive...
+OneDriveInstalling                        = Installing OneDrive...
+OneDriveDownloading                       = Downloading OneDrive...
+OneDriveWarning                           = The "{0}" function will be applied only if the preset is configured to remove OneDrive (or the app was already removed), otherwise the backup functionality for the "Desktop" and "Pictures" folders in OneDrive breaks.
+WindowsFeaturesTitle                      = Windows features
+OptionalFeaturesTitle                     = Optional features
+EnableHardwareVT                          = Enable Virtualization in UEFI.
+UserShellFolderNotEmpty                   = Some files left in the "{0}" folder. Move them manually to a new location.
+UserFolderLocationMove                    = You shouldn't change user folder location to C drive root.
+RetrievingDrivesList                      = Retrieving drives list...
+DriveSelect                               = Select the drive within the root of which the "{0}" folder will be created.
+CurrentUserFolderLocation                 = The current "{0}" folder location: "{1}".
+UserFolderRequest                         = Would you like to change the location of the "{0}" folder?
+UserDefaultFolder                         = Would you like to change the location of the "{0}" folder to the default value?
+ReservedStorageIsInUse                    = This operation is not supported when reserved storage is in use\nPlease re-run the "{0}" function again after PC restart.
+ShortcutPinning                           = The "{0}" shortcut is being pinned to Start...
+SSDRequired                               = To use Windows Subsystem for Android™ on your device, your PC needs to have Solid State Drive (SSD) installed.
+UninstallUWPForAll                        = For all users
+UWPAppsTitle                              = UWP Apps
+GraphicsPerformanceTitle                  = Would you like to set the graphics performance setting of an app of your choice to "High performance"?
+ActionCenter                              = In order to use "{0}" function you have to enable Action Center.
+WindowsScriptHost                         = Windows Script Host access is disabled on this machine. In order to use "{0}" function you have to enable Windows Script Host.
+ScheduledTaskPresented                    = The "{0}" function was already created as "{1}".
+CleanupTaskNotificationTitle              = Windows clean up
+CleanupTaskNotificationEvent              = Run task to clean up Windows unused files and updates?
+CleanupTaskDescription                    = Cleaning up Windows unused files and updates using built-in Disk cleanup app.
+CleanupNotificationTaskDescription        = Pop-up notification reminder about cleaning up Windows unused files and updates.
+SoftwareDistributionTaskNotificationEvent = Windows update cache successfully deleted.
+TempTaskNotificationEvent                 = Temporary files folder successfully cleaned up.
+FolderTaskDescription                     = The {0} folder cleanup.
+EventViewerCustomViewName                 = Process Creation
+EventViewerCustomViewDescription          = Process creation and command-line auditing events.
+RestartWarning                            = Make sure to restart your PC.
+ErrorsLine                                = Line
+ErrorsMessage                             = Errors/Warnings
+DialogBoxOpening                          = Displaying the dialog box...
+Disable                                   = Disable
+Enable                                    = Enable
+UserChoiceWarning                         = Microsoft has blocked write access to UserChoice key for .pdf extention and http/https protocols with KB5034765 release.
+AllFilesFilter                            = All Files
+FolderSelect                              = Select a folder
+FilesWontBeMoved                          = Files will not be moved.
+Install                                   = Install
+NoData                                    = Nothing to display.
+NoInternetConnection                      = No Internet connection.
+RestartFunction                           = Please re-run the "{0}" function.
+NoResponse                                = A connection could not be established with {0}.
+Restore                                   = Restore
+Run                                       = Run
+Skipped                                   = Skipped.
+GPOUpdate                                 = Updating GPO...
+TelegramGroupTitle                        = Join our official Telegram group.
+TelegramChannelTitle                      = Join our official Telegram channel.
+DiscordChannelTitle                       = Join our official Discord channel.
+Uninstall                                 = Uninstall
 '@
 
 # SIG # Begin signature block
 # MIIbswYJKoZIhvcNAQcCoIIbpDCCG6ACAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBz3JSiccZt57Fq
-# eTpkLtQdB7pyk3OeSppA1IYhCYMmjKCCFgkwggL8MIIB5KADAgECAhBUm8fhP7ik
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAHaX+WvGsLbW6/
+# +eEpKovRqcF8CRIFdyUzd1DTkTmNUqCCFgkwggL8MIIB5KADAgECAhBUm8fhP7ik
 # pEAOlST8/xQoMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMMC1RlYW0gU29waGlh
 # MB4XDTI0MDQxNDEyMTAyN1oXDTI2MDQxNDEyMjAyNlowFjEUMBIGA1UEAwwLVGVh
 # bSBTb3BoaWEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvJAyx9NqQ
@@ -200,28 +201,28 @@ Uninstall                                 = 卸载
 # EEGKMYIFADCCBPwCAQEwKjAWMRQwEgYDVQQDDAtUZWFtIFNvcGhpYQIQVJvH4T+4
 # pKRADpUk/P8UKDANBglghkgBZQMEAgEFAKCBhDAYBgorBgEEAYI3AgEMMQowCKAC
 # gAChAoAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQBgjcCAQsx
-# DjAMBgorBgEEAYI3AgEVMC8GCSqGSIb3DQEJBDEiBCAE8GaQEEZ6jgH57cu0cGiC
-# yJB0vI8RuAHSf9DVSIyfjTANBgkqhkiG9w0BAQEFAASCAQBujrE0dyAWoEtZBlt4
-# QLKjdHI+afkyiULDXimQEJd9ida5UqJApTXbKi7t6T1ITRa2l0rzK1rj1811iBcS
-# RBWkYG6BJh56g6ZeCRv+7lFBuQY6EN65rVBZ0hzIHqvtI0kvrPbE3P8LxjdQVqhh
-# 72SWOTA/oQ16yU3BCoomVbIJaJOl5TdjPNNBnPBxZx1QN875dAYShIopdsD/L1T5
-# fbED9EP8ZqmcVO+/fvWSg9aAVpXW8IGU3T1EslJhfaTUi5sMNM+VeiVmk4oMfKYR
-# rJC8ByB2ytmCQgdSZBntevBQYz4mXaypUX3rpFPW8JxKX7FIPAA0RVh51IUw/QKQ
-# uvt7oYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkGA1UEBhMC
+# DjAMBgorBgEEAYI3AgEVMC8GCSqGSIb3DQEJBDEiBCBzU0yzDgbi6AIpsL7aOYVf
+# woHTV6BDRHDNB9V4PkZ98DANBgkqhkiG9w0BAQEFAASCAQCtH+xE2zmgG76XekYx
+# nKI/GCE2NT1gkzkrqQbmmh06DzoFpTjFPsMB75qP8ZmFgWID2vMPEcFRIOGCJstC
+# /TpZs+W7I2+MJP+FxCDwZrgl2dDxNzqWB3Xn8ulGrSNdwxTpXJ9s7jJ+JXDtiOIt
+# mC37Rp63CNrGPVg92WiKidFDvlJLNE3eVdtosnw9/IAxYcDhO+Zrpr036Aao5aW5
+# hvMIu4l2fg5hQuFH1oM8f86EYEEnbX5sPp7F76A5/BEXBUWIli9Hp1dIfbqpOQRA
+# p0glfx09LZLByIP3Huup5aLUO8vVls4XQ/9BGJD9ssXUcTHJkbcmYM5Bbm8dm2gJ
+# XpWhoYIDIDCCAxwGCSqGSIb3DQEJBjGCAw0wggMJAgEBMHcwYzELMAkGA1UEBhMC
 # VVMxFzAVBgNVBAoTDkRpZ2lDZXJ0LCBJbmMuMTswOQYDVQQDEzJEaWdpQ2VydCBU
 # cnVzdGVkIEc0IFJTQTQwOTYgU0hBMjU2IFRpbWVTdGFtcGluZyBDQQIQBUSv85Sd
 # CDmmv9s/X+VhFjANBglghkgBZQMEAgEFAKBpMBgGCSqGSIb3DQEJAzELBgkqhkiG
-# 9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDQxNDEyMjAzN1owLwYJKoZIhvcNAQkE
-# MSIEIPnLgZG2KJgR3Dh497+9r3NRTwVaDAU85cPpl4z5O2tgMA0GCSqGSIb3DQEB
-# AQUABIICAJCZduK3ddb+uiAdm7cTfBKNRcYYrGz+WkwUWA1HHzwkusEQsG0eIEgX
-# Sw1UbKgMrNlBvv7uo7D7t5cgKmLPmUaeim3Pr+mMIaoMmYnOIoNeCgznJPzHMwm7
-# HYNGjWqqZR/LL6ok5sGK2gwdGa/YRlJCM78afrfp6QDqZ2cFRsDpziyipHOpqQkR
-# 3Z6BL2j+Ckr7tjyXbgdpZrvHIlNcdBqndHJmgRcvofKeC+RVcAT3O3UOUIuB2pOr
-# zvwJ/KWQ7BtzHBwXgGdZSbck+OYEyrYshjY/YkUw6VdFgxxSK+H4+iuP565ckvfv
-# 4n/AFQSPUspyPdu/6p47KYntGGlhsJiPzZrJ+R7lTyGv4oeJzE9KVNHIcXVhdisT
-# YeQr905eq/3Z4t8t4Xa+oPNseoI7nDAE+1wgG9H8t45d62vnEAoXe4irwof0IBqv
-# LPC22Cx5FRrLrWlMpOQOr/31aKpmZguHeGzvMy6pgDWpXDG2bdqxXmzQyCV98NZm
-# pfXethltkWskQoJGKkdXzcrkozxjgqrE/QH9sMCcs5BVTsDM2laeRbbh9Qj5IIJG
-# TlrBOg6H+ki/AXbRJL5F1ed30uehJAhfEJ5cselQoGBDTbohdHAHlIrbMhcU9Dij
-# OyV40J3y9g83dVv2Nn3ySVSFK1OVRV/4UeDf0JhC1u+svT2FP6Tl
+# 9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI0MDQxNDEyMjAzNlowLwYJKoZIhvcNAQkE
+# MSIEII5tdGvNPK8kQXn0agRk99QwENwT6/Kt/QyuxQ4m3zCzMA0GCSqGSIb3DQEB
+# AQUABIICAE/g32x2Ncsivq74ScNFpu/CSmr1aml2aunZ7skTuN4DVwk0pZwbpz5F
+# jd2Vp35aQhbeQ+scLBGSwpW4fn/GSLoGlt2A2HiGfMuhi5+mYJncJU7pbEGzkaKa
+# uni1xP1wb6vLohhSvA2XFOONmrfBSXhwjHvAEZKrTD4d2utQ4sA/tMhswOjFu21n
+# QjLizv2pC33VPIHtmxjJ5K/M9s72vGSGUetHcc2ayUw3zOJpCp4ZGnw79aZ4uM6t
+# O9UhmzxOt5QPJNB1HVld7bQYL3AUAIqCcslNWwfuIqg4jzMDj08dUlFe8KHYEm0Z
+# 8EXBt6RMGku/18P29UBLaecD0XOwctXDnVGzXt32gbSijPutEDEajAN998eH83zq
+# pWqzrsAsVRLPh/QxIgLzYoip8ze1o8xFgRuUl6nLDM3gnhJVQbQ30WB9czyIRvAv
+# gZjlSEgYOn7epELf+9vj6AxnWHfcxK6XKFmkJ+QEqEb0UemTCVLgQhRmyRu4o7qe
+# 53/gjuIXQnECoz9icCT+TiSa9o01Lj+XBC8j7McneO+wyAEG1H/McjQzPYxIaquw
+# 0hpQacQTt9isl8RvFXj+Quo76WJwpTRUva10ZQB5hIUEDmseYf/pC7OG4WXZZIAm
+# sTuwRFgY9YZFCjOwVzyvELaj5VuNMeoVeeHpRehVq3gVwp6gWukS
 # SIG # End signature block

@@ -17,6 +17,7 @@ function Uninstall-AppPackage {
 
 # Removes apps specified during function call from all user accounts and from the OS image.
 function RemoveApps {
+	[CmdletBinding()]
 	param (
 		$appslist
 	)

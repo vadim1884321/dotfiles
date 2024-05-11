@@ -2,7 +2,11 @@
 . ~\dotfiles\dotfiles-windows\helpers.ps1
 
 function Install-Desktop-Apps {
-	Foreach ($app in $install) {
+	param (
+		$appslist
+	)
+
+	Foreach ($app in $appslist) {
 		#check if the app is already installed
 		$listApp = winget list --exact -q $app.name
 		if (![String]::Join("", $listApp).Contains($app.name)) {

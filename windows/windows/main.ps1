@@ -1,17 +1,7 @@
-# PowerShell 7 doesn't load en-us localization automatically if there is no localization folder in user's language which is determined by $PSUICulture
-# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-localizeddata?view=powershell-7.3
-# https://github.com/PowerShell/PowerShell/pull/19896
-# try
-# {
-# 	Import-LocalizedData -BindingVariable Global:Localization -UICulture $PSUICulture -BaseDirectory $PSScriptRoot\Localizations -FileName Sophia -ErrorAction Stop
-# }
-# catch
-# {
-# 	Import-LocalizedData -BindingVariable Global:Localization -UICulture en-US -BaseDirectory $PSScriptRoot\Localizations -FileName Sophia
-# }
-
 . "$PSScriptRoot\functions\Logging.ps1"
 . "$PSScriptRoot\functions\CreateRestorePoint.ps1"
+. "$PSScriptRoot\functions\Localizations.ps1"
+. "$PSScriptRoot\functions\Set-Policy.ps1"
 . "$PSScriptRoot\functions\DiagTrackService.ps1"
 . "$PSScriptRoot\functions\DiagnosticDataLevel.ps1"
 . "$PSScriptRoot\functions\ErrorReporting.ps1"
@@ -27,8 +17,11 @@
 . "$PSScriptRoot\functions\TailoredExperiences.ps1"
 . "$PSScriptRoot\functions\BingSearch.ps1"
 . "$PSScriptRoot\functions\BrowsingHistory.ps1"
+. "$PSScriptRoot\functions\JXLWinthumb.ps1"
 . "$PSScriptRoot\functions\HiddenItems.ps1"
 . "$PSScriptRoot\functions\FileExtensions.ps1"
+. "$PSScriptRoot\functions\ClassicContextMenu.ps1"
+. "$PSScriptRoot\functions\Gallery.ps1"
 . "$PSScriptRoot\functions\FileTransferDialog.ps1"
 . "$PSScriptRoot\functions\QuickAccessRecentFiles.ps1"
 . "$PSScriptRoot\functions\QuickAccessFrequentFolders.ps1"
@@ -38,7 +31,6 @@
 . "$PSScriptRoot\functions\CopilotButton.ps1"
 . "$PSScriptRoot\functions\TaskViewButton.ps1"
 . "$PSScriptRoot\functions\PreventTeamsInstallation.ps1"
-. "$PSScriptRoot\functions\UnpinTaskbarShortcuts.ps1"
 . "$PSScriptRoot\functions\ControlPanelView.ps1"
 . "$PSScriptRoot\functions\WindowsColorMode.ps1"
 . "$PSScriptRoot\functions\AppColorMode.ps1"
@@ -78,3 +70,6 @@
 . "$PSScriptRoot\functions\DNSoverHTTPS.ps1"
 . "$PSScriptRoot\functions\OpenWindowsTerminalContext.ps1"
 . "$PSScriptRoot\functions\OpenWindowsTerminalAdminContext.ps1"
+. "$PSScriptRoot\functions\test.ps1"
+# Write-Warning -Message $Localization.testEnable
+# test -Show

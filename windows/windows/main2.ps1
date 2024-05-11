@@ -139,8 +139,8 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAcce
 # Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" "AllowTelemetry" 1
 
 # Start Menu: Не показывать предложения в меню Пуск
-Write-Host "Disable suggested content:" -ForegroundColor "Green"
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-338388Enabled" 0
+# Write-Host "Disable suggested content:" -ForegroundColor "Green"
+# Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-338388Enabled" 0
 
 ###############################################################################
 ### Explorer, Taskbar, and System Tray                                        #

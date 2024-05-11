@@ -1,3 +1,4 @@
+# . "$PSScriptRoot\Set-Policy.ps1"
 <#
 	.SYNOPSIS
 	Diagnostic data

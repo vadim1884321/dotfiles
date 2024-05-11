@@ -17,8 +17,7 @@
 	.NOTES
 	Current user
 #>
-function FileExtensions
-{
+function FileExtensions {
 	param
 	(
 		[Parameter(
@@ -36,14 +35,11 @@ function FileExtensions
 		$Hide
 	)
 
-	switch ($PSCmdlet.ParameterSetName)
-	{
-		"Show"
-		{
+	switch ($PSCmdlet.ParameterSetName) {
+		"Show" {
 			New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -PropertyType DWord -Value 0 -Force
 		}
-		"Hide"
-		{
+		"Hide" {
 			New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -PropertyType DWord -Value 1 -Force
 		}
 	}
