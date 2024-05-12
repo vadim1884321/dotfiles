@@ -14,7 +14,7 @@ $Parameters = @{
 Invoke-WebRequest @Parameters
 
 Write-Warning "Installing Git..."
-winget install --exact --silent Git.Git --accept-package-agreement
+winget install --exact --silent Git.Git --accept-package-agreements
 
 Write-Warning "Clone dotfiles repository..."
 git clone git@github.com:vadim1884321/dotfiles.git
