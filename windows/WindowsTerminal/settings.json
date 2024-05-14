@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
-    [
+    "actions": [
         {
-            "command":
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -16,44 +14,38 @@
             "keys": "ctrl+v"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command":
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         }
     ],
     "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{a0c39715-13d1-4dba-81df-99678d8115ad}",
-    "initialCols": 150,
-    "initialRows": 40,
-    "newTabMenu":
-    [
+    "initialCols": 160,
+    "initialRows": 45,
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
-    {
-        "defaults":
-        {
-            "font":
-            {
-                "face": "JetBrainsMono Nerd Font"
+    "profiles": {
+        "defaults": {
+            "font": {
+                "face": "Cascadia Code NF"
             },
             "opacity": 80,
             "useAcrylic": true
         },
-        "list":
-        [
+        "list": [
             {
                 "commandline": "%PROGRAMFILES%\\PowerShell\\7\\pwsh.exe -NoLogo",
                 "guid": "{a0c39715-13d1-4dba-81df-99678d8115ad}",
@@ -65,13 +57,13 @@
             {
                 "commandline": "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe -NoLogo -NoProfile",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": true,
+                "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
                 "commandline": "%COMSPEC%",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": true,
+                "hidden": false,
                 "name": "\u041a\u043e\u043c\u0430\u043d\u0434\u043d\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430"
             },
             {
@@ -95,8 +87,8 @@
                 "hidden": false,
                 "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
                 "name": "Ubuntu",
-                "tabTitle": "Ubuntu",
-                "startingDirectory": "~"
+                "startingDirectory": "~",
+                "tabTitle": "Ubuntu"
             },
             {
                 "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Debian",
@@ -116,8 +108,7 @@
             }
         ]
     },
-    "schemes":
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",

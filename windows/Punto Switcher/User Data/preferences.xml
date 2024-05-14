@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PuntoSwitcherSettings version="11">
+    <PuntoHotkeys>19,275,1043,1169,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1622,0,0,0,0,0,0,0</PuntoHotkeys>
+    <LayoutSwitchKey>0</LayoutSwitchKey>
+    <SeparateLangCombination>0</SeparateLangCombination>
+    <TransparentFormsFiller>0</TransparentFormsFiller>
+    <CheckForUpdate>Yes</CheckForUpdate>
+    <RunAtStartup>Yes</RunAtStartup>
+    <DontConvertCapitals>No</DontConvertCapitals>
+    <ShowCurLayoutInWndIcon>No</ShowCurLayoutInWndIcon>
+    <ShowPopupOnException>Yes</ShowPopupOnException>
+    <ExceptionCount>2</ExceptionCount>
+    <FixTwoUpperLetters>Yes</FixTwoUpperLetters>
+    <FixInvertedCase>Yes</FixInvertedCase>
+    <ShowLayoutFlags>No</ShowLayoutFlags>
+    <OneKeySwitchLayoutEnabled>No</OneKeySwitchLayoutEnabled>
+    <BinarySwitchLayout>No</BinarySwitchLayout>
+    <DisablePreHandle>No</DisablePreHandle>
+    <AllSoundsEnabled>No</AllSoundsEnabled>
+    <FirstLaunch>No</FirstLaunch>
+    <SeparateLangKeysEnabled>No</SeparateLangKeysEnabled>
+    <ShowQuickWordsListInLeftBtnMenu>Yes</ShowQuickWordsListInLeftBtnMenu>
+    <DontReactOnOtherLangs>No</DontReactOnOtherLangs>
+    <SingleLayout>No</SingleLayout>
+    <ShowTooltips>Yes</ShowTooltips>
+    <EnableDiary>No</EnableDiary>
+    <DiarySkipSepWords>Yes</DiarySkipSepWords>
+    <ScrollAsCaps>No</ScrollAsCaps>
+    <HidePopIndicAfterLayoutChange>No</HidePopIndicAfterLayoutChange>
+    <PSWorks>Yes</PSWorks>
+    <DisableHotKeysWhenTurnedOff>No</DisableHotKeysWhenTurnedOff>
+    <FixPopupIndicator>No</FixPopupIndicator>
+    <AutoReplaceAlways>Yes</AutoReplaceAlways>
+    <TurnOffDiaryInProgExceptions>No</TurnOffDiaryInProgExceptions>
+    <ShowFormsFiller>No</ShowFormsFiller>
+    <ReplaceOnEnterAndTab>Yes</ReplaceOnEnterAndTab>
+    <ReplaceOnSpace>No</ReplaceOnSpace>
+    <DontShowTranslitWin>No</DontShowTranslitWin>
+    <FullUnhookWhenDisabled>No</FullUnhookWhenDisabled>
+    <EnableClipboardHistory>No</EnableClipboardHistory>
+    <PersistentClipboardHistory>No</PersistentClipboardHistory>
+    <AutoSaveClipboardToDiary>No</AutoSaveClipboardToDiary>
+    <EnableMouseEmulation>No</EnableMouseEmulation>
+    <DisableCapsLock>No</DisableCapsLock>
+    <DisableAutoSaveClipboardToDiaryInProgExceptions>No</DisableAutoSaveClipboardToDiaryInProgExceptions>
+    <PopupIndicatorPos>CPoint(300, 300)</PopupIndicatorPos>
+    <FormsFillerRect>CRect(100, 100, 350, 500)</FormsFillerRect>
+    <RestrictKeysEnabled>No,No,No,No,No,Yes,No</RestrictKeysEnabled>
+    <MinDiaryRecordWords>1</MinDiaryRecordWords>
+    <DontSwitchOnOtherLangs>No</DontSwitchOnOtherLangs>
+    <Sounds>C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\typerus.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\typeeng.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\misprint.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\ru.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\en.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\reverse.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\switch.wav,C:\Users\vadim\AppData\Local\Yandex\Punto Switcher\Sounds\replace.wav</Sounds>
+    <SoundsStates>3,3,2,3,3,3,2,2,2,2,2,2,3,3,3,2</SoundsStates>
+    <AskF12Support>No</AskF12Support>
+    <ShowLayoutFlagsAlwaysInColor>No</ShowLayoutFlagsAlwaysInColor>
+    <DoubleBackSpaceAction>0</DoubleBackSpaceAction>
+    <ShareHotKeyForUndoConvertAndSelectionConvert>No</ShareHotKeyForUndoConvertAndSelectionConvert>
+    <DiarySaveDays>0</DiarySaveDays>
+    <DetectPasswords>Yes</DetectPasswords>
+    <RunAtStartupElevated>No</RunAtStartupElevated>
+</PuntoSwitcherSettings>

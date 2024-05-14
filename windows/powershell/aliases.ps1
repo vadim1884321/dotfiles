@@ -97,7 +97,7 @@ ${function:config} = { git.exe --git-dir="$HOME\dotfiles.git\" --work-tree=$HOME
 ${function:configs} = { config status -s --untracked-files=no }
 ${function:configc} = { Write-Host 'Configuration:'; config add ~/dotfiles; configs; config commit --untracked-files=no -a -m "Automatic update"; }
 
-Import-Module git-aliases -DisableNameChecking
+# Import-Module git-aliases -DisableNameChecking
 
 # Stop & Restart the Windows explorer process
 function Restart-Explorer {
