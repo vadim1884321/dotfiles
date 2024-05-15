@@ -1,7 +1,14 @@
 #Requires -RunAsAdministrator
 
 # Проверяет устанавлен ли Winget
-Invoke-RestMethod asheroto.com/winget | Invoke-Expression
+$winget = Get-Command -Name winget -ErrorAction SilentlyContinue
+
+if ($null -ne $winget) {
+	Write-Host "Winget is already installed" -ForegroundColor Blue
+}
+else {
+	Invoke-RestMethod asheroto.com/winget | Invoke-Expression
+}
 
 Write-Host "Installing Windows Terminal..." -ForegroundColor Cyan
 winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agreements
@@ -61,6 +68,9 @@ try {
 catch {
 	Write-Error "Failed to download or install the Cascadia Code font. Error: $_"
 }
+
+Write-Host "Installing OpenSSH..." -ForegroundColor Cyan
+winget install --exact --silent Microsoft.OpenSSH.Beta --accept-package-agreements
 
 Write-Host "Installing Git..." -ForegroundColor Cyan
 winget install --exact --silent Git.Git --accept-package-agreements
