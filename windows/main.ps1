@@ -31,7 +31,7 @@ if (-not (Test-InternetConnection)) {
 }
 
 . "$PSScriptRoot\windows\main.ps1"
-# . "$PSScriptRoot/powershell/main.ps1"
+# . "$PSScriptRoot/PowerShell/main.ps1"
 # . "$PSScriptRoot/configurations/main.ps1"
 # . "$PSScriptRoot/debloat/main.ps1"
 # . "$PSScriptRoot/dependencies/test.ps1"
