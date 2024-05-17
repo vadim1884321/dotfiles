@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 
-. "$PSScriptRoot\helpers.ps1"
+. helpers.ps1
 # . "$PSScriptRoot\PackageManagers\Install-Winget.ps1.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-WinChoco.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-WinScoop.ps1"
@@ -23,20 +23,20 @@ Install-WinScoop
 # 	Invoke-RestMethod asheroto.com/winget | Invoke-Expression
 # }
 
-Write-Host "Installing Windows Terminal..." -ForegroundColor Cyan
-winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agreements
+# Write-Host "Installing Windows Terminal..." -ForegroundColor Cyan
+# winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agreements
 
-Write-Host "Installing PowerShell..." -ForegroundColor Cyan
-winget install --exact --silent Microsoft.PowerShell --accept-package-agreements
+# Write-Host "Installing PowerShell..." -ForegroundColor Cyan
+# winget install --exact --silent Microsoft.PowerShell --accept-package-agreements
 
-Write-Host "Copy configuration for Windows Terminal..." -ForegroundColor Cyan
-$Parameters = @{
-	Uri             = "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/WindowsTerminal/settings.json"
-	OutFile         = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-	UseBasicParsing = $true
-	Verbose         = $true
-}
-Invoke-WebRequest @Parameters
+# Write-Host "Copy configuration for Windows Terminal..." -ForegroundColor Cyan
+# $Parameters = @{
+# 	Uri             = "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/WindowsTerminal/settings.json"
+# 	OutFile         = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+# 	UseBasicParsing = $true
+# 	Verbose         = $true
+# }
+# Invoke-WebRequest @Parameters
 
 # Устанавливает шрифт Cascadia Code
 # try {
