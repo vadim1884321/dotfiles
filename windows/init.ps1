@@ -258,121 +258,9 @@ function Install-Scoop {
 		# https://github.com/ScoopInstaller/Install#for-admin
 		Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 		Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
-
-		scoop install git
-		scoop bucket add extras
-		scoop bucket add nerd-fonts
-		scoop update
 	}
 	Catch {
 		Write-Section -Text "Scoop failed to install" -Color Red
-	}
-}
-
-# Устанавливает NuGet, если не установлен
-function Install-Nuget {
-	if (!(Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
-		Write-Host "Installing NuGet as package provider..." -ForegroundColor Cyan
-		Install-PackageProvider -Name "NuGet" -Force
-	}
-	else {
-		Write-Host "NuGet is already installed." -ForegroundColor Green
-	}
-}
-
-# Получает статус установлен ли пакетный провайдер
-function Get-PackageProvider-Installation-Status {
-	[CmdletBinding()]
-	param(
-		[Parameter(Position = 0, Mandatory = $true)]
-		[string]
-		$PackageProviderName
-	)
-
-	try {
-		Get-PackageProvider -Name $PackageProviderName
-		return $true
-	}
-	catch [Exception] {
-		return $false
-	}
-}
-
-# Устанавливает репозиторий PSGallery, если не установлен
-function Install-PSGallery {
-	if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
-		Write-Host "Setting up PSGallery as PowerShell trusted repository..." -ForegroundColor Cyan
-		Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-	}
-	else {
-		Write-Host "PSGallery is already installed." -ForegroundColor Green
-	}
-}
-
-# Получает статус установлен ли репозиторий
-function Get-PSRepository-Trusted-Status {
-	[CmdletBinding()]
-	param(
-		[Parameter(Position = 0, Mandatory = $TRUE)]
-		[string]
-		$PSRepositoryName
-	)
-
-	try {
-		if (!(Get-PSRepository -Name $PSRepositoryName -ErrorAction SilentlyContinue)) {
-			return $false
-		}
-
-		if ((Get-PSRepository -Name $PSRepositoryName).InstallationPolicy -eq "Trusted") {
-			return $true
-		}
-		return $false
-	}
-	catch [Exception] {
-		return $false
-	}
-}
-
-function Install-PackageManagement {
-	if (!(Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
-		Write-Host "Updating PackageManagement module..." -ForegroundColor Cyan
-		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-		Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery"
-	}
-	else {
-		Write-Host "PackageManagement is already installed." -ForegroundColor Green
-	}
-}
-
-function Get-Module-Installation-Status {
-	[CmdletBinding()]
-	param(
-		[Parameter(Position = 0, Mandatory = $true)]
-		[string]
-		$ModuleName,
-
-		[Parameter(Position = 1, Mandatory = $false)]
-		[string]
-		$ModuleMinimumVersion
-	)
-
-	try {
-		if (!([string]::IsNullOrEmpty($ModuleMinimumVersion))) {
-			if ((Get-Module -ListAvailable -Name $ModuleName).Version -ge $ModuleMinimumVersion) {
-				return $true
-			}
-			return $false
-		}
-
-		if (Get-Module -ListAvailable -Name $ModuleName) {
-			return $true
-		}
-		else {
-			return $false
-		}
-	}
-	catch [Exception] {
-		return $false
 	}
 }
 
@@ -412,10 +300,6 @@ Clear-Host
 Install-Winget
 Install-Choco
 Install-Scoop
-
-Install-NuGet
-Install-PSGallery
-Install-PackageManagement
 
 # Проверяет устанавлен ли Winget
 # $winget = Get-Command -Name winget -ErrorAction SilentlyContinue
@@ -495,18 +379,18 @@ Invoke-WebRequest @Parameters
 # Обновляет системные переменные среды
 # $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 
-# Write-Host "Clone dotfiles repository..." -ForegroundColor Cyan
-# git clone https://github.com/vadim1884321/dotfiles.git
+scoop install main/git
+scoop bucket add extras
+scoop bucket add nerd-fonts
+scoop update
+scoop install main/openssh
 
-git config --global --add safe.directory $HOME/dotfiles
-git config --global --add safe.directory $HOME/scoop
-git config --global --add safe.directory $HOME/scoop/buckets/main
-git config --global --add safe.directory $HOME/scoop/buckets/extras
-git config --global --add safe.directory $HOME/scoop/buckets/nerd-fonts
+Write-Host "Clone dotfiles repository..." -ForegroundColor Cyan
+git clone https://github.com/vadim1884321/dotfiles.git
 
-# if (-not (Test-Path "$HOME/dotfiles-config.ps1")) {
-# 	Copy-Item "$HOME/dotfiles/windows/default_config.ps1" "$HOME/dotfiles-config.ps1"
-# }
+if (-not (Test-Path "$HOME\dotfiles-config.ps1")) {
+	Copy-Item "$HOME\dotfiles\windows\default_config.ps1" "$HOME\dotfiles-config.ps1"
+}
 
 Write-Host "Please complete the file ~/dotfiles_data.ps1" -ForegroundColor Blue
 Write-Host "Next, run the ~/dotfiles/windows/main.ps1" -ForegroundColor Blue

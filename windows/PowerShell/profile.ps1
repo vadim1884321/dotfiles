@@ -9,7 +9,7 @@ if (Test-Path "$PSScriptRoot\functions.ps1") {
 }
 
 # Load functions declarations from separate configuration file.
-if (Test-Path "$env:LOCALAPPDATA\Programs\oh-my-posh\bin\oh-my-posh.exe") {
+if (Test-Path "$HOME\scoop\shims\oh-my-posh.exe") {
 	oh-my-posh init pwsh --config "$PSScriptRoot\..\oh-my-posh\velvet.omp.json" | Invoke-Expression
 }
 # Invoke-Expression (&starship init powershell)
