@@ -47,32 +47,26 @@ function Test-WinPackageManager {
 			$wingetLatestVersion = [System.Version]::Parse(($response.tag_name).Trim('v')) #Stores version number of latest release.
 			$wingetOutdated = $wingetCurrentVersion -lt $wingetLatestVersion
 			Write-Section -Text "Winget is installed" -Color Green
-			# Write-Host "===========================================" -ForegroundColor Green
-			# Write-Host "---        Winget is installed          ---" -ForegroundColor Green
-			# Write-Host "===========================================" -ForegroundColor Green
 			Write-Host "Version: $wingetVersionFull" -ForegroundColor White
 
 			if (!$wingetPreview) {
-				Write-Host "    - Winget is a release version." -ForegroundColor Green
+				Write-Host "   - Winget is a release version." -ForegroundColor Green
 			}
 			else {
-				Write-Host "    - Winget is a preview version. Unexpected problems may occur." -ForegroundColor Yellow
+				Write-Host "   - Winget is a preview version. Unexpected problems may occur." -ForegroundColor Yellow
 			}
 
 			if (!$wingetOutdated) {
-				Write-Host "    - Winget is Up to Date" -ForegroundColor Green
+				Write-Host "   - Winget is Up to Date" -ForegroundColor Green
 				$status = "installed"
 			}
 			else {
-				Write-Host "    - Winget is Out of Date" -ForegroundColor Red
+				Write-Host "   - Winget is Out of Date" -ForegroundColor Red
 				$status = "outdated"
 			}
 		}
 		else {
 			Write-Section -Text "Winget is not installed" -Color Red
-			# Write-Host "===========================================" -ForegroundColor Red
-			# Write-Host "---      Winget is not installed        ---" -ForegroundColor Red
-			# Write-Host "===========================================" -ForegroundColor Red
 			$status = "not-installed"
 		}
 	}
@@ -80,17 +74,11 @@ function Test-WinPackageManager {
 	if ($choco) {
 		if ((Get-Command -Name choco -ErrorAction Ignore) -and ($chocoVersion = (Get-Item "$env:ChocolateyInstall\choco.exe" -ErrorAction Ignore).VersionInfo.ProductVersion)) {
 			Write-Section -Text "Chocolatey is installed" -Color Green
-			# Write-Host "===========================================" -ForegroundColor Green
-			# Write-Host "---      Chocolatey is installed        ---" -ForegroundColor Green
-			# Write-Host "===========================================" -ForegroundColor Green
 			Write-Host "Version: v$chocoVersion" -ForegroundColor White
 			$status = "installed"
 		}
 		else {
 			Write-Section -Text "Chocolatey is not installed" -Color Red
-			# Write-Host "===========================================" -ForegroundColor Red
-			# Write-Host "---    Chocolatey is not installed      ---" -ForegroundColor Red
-			# Write-Host "===========================================" -ForegroundColor Red
 			$status = "not-installed"
 		}
 	}
@@ -98,17 +86,10 @@ function Test-WinPackageManager {
 	if ($scoop) {
 		if (Get-Command -Name scoop -ErrorAction Ignore) {
 			Write-Section -Text "Scoop is installed" -Color Green
-			# Write-Host "===========================================" -ForegroundColor Green
-			# Write-Host "---      Chocolatey is installed        ---" -ForegroundColor Green
-			# Write-Host "===========================================" -ForegroundColor Green
-			# Write-Host "Version: v$scoopVersion" -ForegroundColor White
 			$status = "installed"
 		}
 		else {
 			Write-Section -Text "Scoop is not installed" -Color Red
-			# Write-Host "===========================================" -ForegroundColor Red
-			# Write-Host "---    Chocolatey is not installed      ---" -ForegroundColor Red
-			# Write-Host "===========================================" -ForegroundColor Red
 			$status = "not-installed"
 		}
 	}
@@ -255,13 +236,9 @@ function Install-Choco {
 		Write-Host "Seems Chocolatey is not installed, installing now."
 		Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) -ErrorAction Stop
 		powershell choco feature enable -n allowGlobalConfirmation
-
 	}
 	Catch {
 		Write-Section -Text "Chocolatey failed to install" -Color Red
-		# Write-Host "===========================================" -Foregroundcolor Red
-		# Write-Host "--     Chocolatey failed to install     ---" -Foregroundcolor Red
-		# Write-Host "===========================================" -Foregroundcolor Red
 	}
 }
 
@@ -278,15 +255,124 @@ function Install-Scoop {
 		}
 
 		Write-Host "Seems Scoop is not installed, installing now."
-
+		# https://github.com/ScoopInstaller/Install#for-admin
 		Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 		Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
+
+		scoop install git
+		scoop bucket add extras
+		scoop bucket add nerd-fonts
+		scoop update
 	}
 	Catch {
 		Write-Section -Text "Scoop failed to install" -Color Red
-		# Write-Host "===========================================" -Foregroundcolor Red
-		# Write-Host "--     Chocolatey failed to install     ---" -Foregroundcolor Red
-		# Write-Host "===========================================" -Foregroundcolor Red
+	}
+}
+
+# Устанавливает NuGet, если не установлен
+function Install-Nuget {
+	if (!(Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
+		Write-Host "Installing NuGet as package provider..." -ForegroundColor Cyan
+		Install-PackageProvider -Name "NuGet" -Force
+	}
+	else {
+		Write-Host "NuGet is already installed." -ForegroundColor Green
+	}
+}
+
+# Получает статус установлен ли пакетный провайдер
+function Get-PackageProvider-Installation-Status {
+	[CmdletBinding()]
+	param(
+		[Parameter(Position = 0, Mandatory = $true)]
+		[string]
+		$PackageProviderName
+	)
+
+	try {
+		Get-PackageProvider -Name $PackageProviderName
+		return $true
+	}
+	catch [Exception] {
+		return $false
+	}
+}
+
+# Устанавливает репозиторий PSGallery, если не установлен
+function Install-PSGallery {
+	if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
+		Write-Host "Setting up PSGallery as PowerShell trusted repository..." -ForegroundColor Cyan
+		Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+	}
+	else {
+		Write-Host "PSGallery is already installed." -ForegroundColor Green
+	}
+}
+
+# Получает статус установлен ли репозиторий
+function Get-PSRepository-Trusted-Status {
+	[CmdletBinding()]
+	param(
+		[Parameter(Position = 0, Mandatory = $TRUE)]
+		[string]
+		$PSRepositoryName
+	)
+
+	try {
+		if (!(Get-PSRepository -Name $PSRepositoryName -ErrorAction SilentlyContinue)) {
+			return $false
+		}
+
+		if ((Get-PSRepository -Name $PSRepositoryName).InstallationPolicy -eq "Trusted") {
+			return $true
+		}
+		return $false
+	}
+	catch [Exception] {
+		return $false
+	}
+}
+
+function Install-PackageManagement {
+	if (!(Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
+		Write-Host "Updating PackageManagement module..." -ForegroundColor Cyan
+		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+		Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery"
+	}
+	else {
+		Write-Host "PackageManagement is already installed." -ForegroundColor Green
+	}
+}
+
+function Get-Module-Installation-Status {
+	[CmdletBinding()]
+	param(
+		[Parameter(Position = 0, Mandatory = $true)]
+		[string]
+		$ModuleName,
+
+		[Parameter(Position = 1, Mandatory = $false)]
+		[string]
+		$ModuleMinimumVersion
+	)
+
+	try {
+		if (!([string]::IsNullOrEmpty($ModuleMinimumVersion))) {
+			if ((Get-Module -ListAvailable -Name $ModuleName).Version -ge $ModuleMinimumVersion) {
+				return $true
+			}
+			return $false
+		}
+
+		if (Get-Module -ListAvailable -Name $ModuleName) {
+			return $true
+		}
+		else {
+			return $false
+		}
+	}
+	catch [Exception] {
+		return $false
 	}
 }
 
@@ -316,9 +402,9 @@ function Write-Section {
 		[Parameter()]
 		[string]$Color = "Green"
 	)
-	Write-Host ("=" * ($Text.Length + 24)) -ForegroundColor $Color
-	Write-Host "---         $Text         ---" -ForegroundColor $Color
-	Write-Host ("=" * ($Text.Length + 24)) -ForegroundColor $Color
+	Write-Host "===================================================================" -ForegroundColor $Color
+	Write-Host "   $Text " -ForegroundColor $Color
+	Write-Host "===================================================================" -ForegroundColor $Color
 }
 
 Clear-Host
@@ -326,6 +412,10 @@ Clear-Host
 Install-Winget
 Install-Choco
 Install-Scoop
+
+Install-NuGet
+Install-PSGallery
+Install-PackageManagement
 
 # Проверяет устанавлен ли Winget
 # $winget = Get-Command -Name winget -ErrorAction SilentlyContinue
@@ -337,20 +427,20 @@ Install-Scoop
 # 	Invoke-RestMethod asheroto.com/winget | Invoke-Expression
 # }
 
-# Write-Host "Installing Windows Terminal..." -ForegroundColor Cyan
-# winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agreements
+Write-Host "Installing Windows Terminal..." -ForegroundColor Cyan
+winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agreements
 
-# Write-Host "Installing PowerShell..." -ForegroundColor Cyan
-# winget install --exact --silent Microsoft.PowerShell --accept-package-agreements
+Write-Host "Installing PowerShell..." -ForegroundColor Cyan
+winget install --exact --silent Microsoft.PowerShell --accept-package-agreements
 
-# Write-Host "Copy configuration for Windows Terminal..." -ForegroundColor Cyan
-# $Parameters = @{
-# 	Uri             = "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/WindowsTerminal/settings.json"
-# 	OutFile         = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-# 	UseBasicParsing = $true
-# 	Verbose         = $true
-# }
-# Invoke-WebRequest @Parameters
+Write-Host "Copy configuration for Windows Terminal..." -ForegroundColor Cyan
+$Parameters = @{
+	Uri             = "https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/WindowsTerminal/settings.json"
+	OutFile         = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+	UseBasicParsing = $true
+	Verbose         = $true
+}
+Invoke-WebRequest @Parameters
 
 # Устанавливает шрифт Cascadia Code
 # try {
@@ -407,6 +497,12 @@ Install-Scoop
 
 # Write-Host "Clone dotfiles repository..." -ForegroundColor Cyan
 # git clone https://github.com/vadim1884321/dotfiles.git
+
+git config --global --add safe.directory $HOME/dotfiles
+git config --global --add safe.directory $HOME/scoop
+git config --global --add safe.directory $HOME/scoop/buckets/main
+git config --global --add safe.directory $HOME/scoop/buckets/extras
+git config --global --add safe.directory $HOME/scoop/buckets/nerd-fonts
 
 # if (-not (Test-Path "$HOME/dotfiles-config.ps1")) {
 # 	Copy-Item "$HOME/dotfiles/windows/default_config.ps1" "$HOME/dotfiles-config.ps1"
