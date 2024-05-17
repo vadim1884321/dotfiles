@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 
-. helpers.ps1
+. ".\helpers.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-Winget.ps1.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-WinChoco.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-WinScoop.ps1"
