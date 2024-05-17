@@ -1,4 +1,5 @@
 $computer_name = "DESKTOP-BEELINK"
+$network_name = "SNR-CPE-EB9D"
 
 $git_settings = @{user = 'vadim'; email = 'vadim@domain.com' }
 
@@ -8,31 +9,31 @@ $git_settings = @{user = 'vadim'; email = 'vadim@domain.com' }
 # @(program, args)
 $install = @(
 	@{name = "Microsoft.WindowsTerminal"; source = "msstore" },
+	@{name = "Microsoft.PowerShell" },
+	@{name = "Microsoft.OpenSSH.Beta" },
+	@{name = "JanDeDobbeleer.OhMyPosh" },
 	@{name = "Git.Git" },
 	@{name = "GitHub.cli" },
-	@{name = "Microsoft.PowerShell" },
-	@{name = "Microsoft.PowerToys" },
-	@{name = "JanDeDobbeleer.OhMyPosh" },
-	@{name = "Obsidian.Obsidian" },
-	@{name = "Mozilla.Firefox" },
-	@{name = "Yandex.Browser" },
-	@{name = "Yandex.PuntoSwitcher" },
 	@{name = "Microsoft.VisualStudioCode" },
-	@{name = "eza-community.eza" },
-	@{name = "DEVCOM.JetBrainsMonoNerdFont" },
-	@{name = "Microsoft.OpenSSH.Beta" },
-	@{name = "qBittorrent.qBittorrent" },
+	@{name = "Neovim.Neovim" },
+	@{name = "Obsidian.Obsidian" },
+	@{name = "Microsoft.PowerToys" },
+	@{name = "Yandex.Browser" },
+	@{name = "Mozilla.Firefox" },
 	@{name = "7zip.7zip" },
-	@{name = "sharkdp.bat" },
+	@{name = "agalwood.Motrix" },
+	# @{name = "qBittorrent.qBittorrent" },
+	# @{name = "MicaForEveryone.MicaForEveryone" },
+	# @{name = "Microsoft.DotNet.DesktopRuntime.3_1" },
+	@{name = "Telegram.TelegramDesktop" },
 	@{name = "Gyan.FFmpeg" },
 	@{name = "yt-dlp.yt-dlp" },
 	@{name = "ImageMagick.ImageMagick" },
-	@{name = "Telegram.TelegramDesktop" },
-	@{name = "FxSoundLLC.FxSound" },
+	@{name = "eza-community.eza" },
+	@{name = "sharkdp.bat" },
 	@{name = "junegunn.fzf" },
-	@{name = "ajeetdsouza.zoxide" },
-	@{name = "MicaForEveryone.MicaForEveryone" },
-	@{name = "Microsoft.DotNet.DesktopRuntime.3_1" }
+	@{name = "ajeetdsouza.zoxide" }
+	# @{name = "FxSoundLLC.FxSound" }
 )
 
 # The following built-in Windows features are disabled. The first element is the

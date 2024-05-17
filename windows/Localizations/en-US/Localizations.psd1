@@ -1,4 +1,5 @@
 ﻿ConvertFrom-StringData -StringData @'
+Logging                                   = Enable script logging. Log will be recorded into the script folder. To stop logging just close console or type "Stop-Transcript"
 CreateRestorePoint                        = Create a restore point
 UnsupportedOSBuild                        = The script supports Windows 11 23H2+.
 UpdateWarning                             = Your Windows 11 build: {0}.{1}. Supported builds: {2}+. Run Windows Update and try again.

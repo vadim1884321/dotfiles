@@ -1,3 +1,4 @@
+
 # Easier Navigation: .., ..., ...., ....., and ~
 ${function:~} = { Set-Location ~ }
 ${function:Set-ParentLocation} = { Set-Location .. }; Set-Alias ".." Set-ParentLocation
@@ -10,6 +11,7 @@ ${function:......} = { Set-Location ..\..\..\..\.. }
 
 # Navigation Shortcuts
 ${function:dev} = { Set-Location ~\dev }
+function dev {}
 ${function:pro} = { Set-Location ~\projects }
 ${function:pics} = { Set-Location ~\Pictures }
 ${function:dt} = { Set-Location ~\Desktop }
@@ -29,6 +31,26 @@ function sha256 { Get-FileHash -Algorithm SHA256 $args }
 function HKLM: { Set-Location HKLM: }
 function HKCU: { Set-Location HKCU: }
 function Env: { Set-Location Env: }
+
+
+# Directory Listing: Use `ls.exe` if available
+# if (Get-Command eza.exe -ErrorAction SilentlyContinue | Test-Path) {
+# 	rm alias:ls -ErrorAction SilentlyContinue
+# 	# Set `ls` to call `ls.exe` and always use --color
+# 	${function:ls} = { eza.exe --color @args }
+# 	# List all files in long format
+# 	${function:l} = { ls -lF @args }
+# 	# List all files in long format, including hidden files
+# 	${function:la} = { ls -laF @args }
+# 	# List only directories
+# 	${function:lsd} = { Get-ChildItem -Directory -Force @args }
+# }
+# else {
+# 	# List all files, including hidden files
+# 	${function:la} = { ls -Force @args }
+# 	# List only directories
+# 	${function:lsd} = { Get-ChildItem -Directory -Force @args }
+# }
 
 function gcom {
 	git add .

@@ -1,5 +1,5 @@
-. ~\dotfiles-config.ps1
-. ~\dotfiles\dotfiles-windows\helpers.ps1
+# . ~\dotfiles-config.ps1
+# . ~\dotfiles\dotfiles-windows\helpers.ps1
 
 function Install-Desktop-Apps {
 	param (
@@ -24,37 +24,47 @@ function Install-Desktop-Apps {
 	}
 }
 
+# Устанавливает NuGet, если не установлен
 function Install-Nuget {
-	if (-not (Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
-		Write-Host "Installing NuGet as package provider:" -ForegroundColor "Green";
-		Install-PackageProvider -Name "NuGet" -Force;
+	if (!(Get-PackageProvider-Installation-Status -PackageProviderName "NuGet")) {
+		Write-Host "Installing NuGet as package provider..." -ForegroundColor Cyan
+		Install-PackageProvider -Name "NuGet" -Force
+	}
+	else {
+		Write-Host "NuGet is already installed." -ForegroundColor Green
 	}
 }
 
+# Получает статус установлен ли пакетный провайдер
 function Get-PackageProvider-Installation-Status {
 	[CmdletBinding()]
 	param(
-		[Parameter(Position = 0, Mandatory = $TRUE)]
+		[Parameter(Position = 0, Mandatory = $true)]
 		[string]
 		$PackageProviderName
 	)
 
 	try {
-		Get-PackageProvider -Name $PackageProviderName;
-		return $TRUE;
+		Get-PackageProvider -Name $PackageProviderName
+		return $true
 	}
 	catch [Exception] {
-		return $FALSE;
+		return $false
 	}
 }
 
+# Устанавливает репозиторий PSGallery, если не установлен
 function Install-PSGallery {
 	if (-not (Get-PSRepository-Trusted-Status -PSRepositoryName "PSGallery")) {
-		Write-Host "Setting up PSGallery as PowerShell trusted repository:" -ForegroundColor "Green";
-		Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
+		Write-Host "Setting up PSGallery as PowerShell trusted repository..." -ForegroundColor Cyan
+		Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+	}
+	else {
+		Write-Host "PSGallery is already installed." -ForegroundColor Green
 	}
 }
 
+# Получает статус установлен ли репозиторий
 function Get-PSRepository-Trusted-Status {
 	[CmdletBinding()]
 	param(
@@ -64,56 +74,62 @@ function Get-PSRepository-Trusted-Status {
 	)
 
 	try {
-		if (-not (Get-PSRepository -Name $PSRepositoryName -ErrorAction SilentlyContinue)) {
-			return $FALSE;
+		if (!(Get-PSRepository -Name $PSRepositoryName -ErrorAction SilentlyContinue)) {
+			return $false
 		}
 
 		if ((Get-PSRepository -Name $PSRepositoryName).InstallationPolicy -eq "Trusted") {
-			return $TRUE;
+			return $true
 		}
-		return $FALSE;
+		return $false
 	}
 	catch [Exception] {
-		return $FALSE;
+		return $false
 	}
 }
 
 function Install-PackageManagement {
-	if (-not (Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
-		Write-Host "Updating PackageManagement module:" -ForegroundColor "Green";
-		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
-		Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery";
+	if (!(Get-Module-Installation-Status -ModuleName "PackageManagement" -ModuleMinimumVersion "1.4.6")) {
+		Write-Host "Updating PackageManagement module..." -ForegroundColor Cyan
+		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+		Install-Module -Name "PackageManagement" -Force -MinimumVersion "1.4.6" -Scope "CurrentUser" -AllowClobber -Repository "PSGallery"
+	}
+	else {
+		Write-Host "PackageManagement is already installed." -ForegroundColor Green
 	}
 }
 
 function Get-Module-Installation-Status {
 	[CmdletBinding()]
 	param(
-		[Parameter(Position = 0, Mandatory = $TRUE)]
+		[Parameter(Position = 0, Mandatory = $true)]
 		[string]
 		$ModuleName,
 
-		[Parameter(Position = 1, Mandatory = $FALSE)]
+		[Parameter(Position = 1, Mandatory = $false)]
 		[string]
 		$ModuleMinimumVersion
 	)
 
 	try {
-		if (-not ([string]::IsNullOrEmpty($ModuleMinimumVersion))) {
+		if (!([string]::IsNullOrEmpty($ModuleMinimumVersion))) {
 			if ((Get-Module -ListAvailable -Name $ModuleName).Version -ge $ModuleMinimumVersion) {
-				return $TRUE;
+				return $true
 			}
-			return $FALSE;
+			return $false
 		}
 
 		if (Get-Module -ListAvailable -Name $ModuleName) {
-			return $TRUE;
+			return $true
 		}
 		else {
-			return $FALSE;
+			return $false
 		}
 	}
 	catch [Exception] {
-		return $FALSE;
+		return $false
 	}
 }
+Install-NuGet
+Install-PSGallery
+Install-PackageManagement

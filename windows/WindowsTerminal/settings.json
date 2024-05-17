@@ -1,9 +1,11 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
@@ -14,7 +16,8 @@
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -32,20 +35,26 @@
     "defaultProfile": "{a0c39715-13d1-4dba-81df-99678d8115ad}",
     "initialCols": 160,
     "initialRows": 45,
-    "newTabMenu": [
+    "newTabMenu": 
+    [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": {
-        "defaults": {
-            "font": {
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "elevate": true,
+            "font": 
+            {
                 "face": "Cascadia Code NF"
             },
             "opacity": 80,
             "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
                 "commandline": "%PROGRAMFILES%\\PowerShell\\7\\pwsh.exe -NoLogo",
                 "guid": "{a0c39715-13d1-4dba-81df-99678d8115ad}",
@@ -108,7 +117,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",

@@ -46,22 +46,24 @@ function Test-PathRegistryKey {
 	}
 }
 
-function Test-WingetPackageManager {
-	<#
+<#
+	.SYNOPSIS
+	Checks if Winget, Choco and/or Scoop are installed
 
-    .SYNOPSIS
-        Checks if Winget and/or Choco are installed
+	.PARAMETER winget
+	Check if Winget is installed
 
-    .PARAMETER winget
-        Check if Winget is installed
+	.PARAMETER choco
+	Check if Chocolatey is installed
 
-    .PARAMETER choco
-        Check if Chocolatey is installed
-
-    #>
-
+	.PARAMETER scoop
+	Check if Scoop is installed
+#>
+function Test-WinPackageManager {
 	Param(
-		[System.Management.Automation.SwitchParameter]$winget
+		[System.Management.Automation.SwitchParameter]$winget,
+		[System.Management.Automation.SwitchParameter]$choco,
+		[System.Management.Automation.SwitchParameter]$scoop
 	)
 
 	$status = "not-installed"
@@ -90,10 +92,10 @@ function Test-WingetPackageManager {
 			$response = Invoke-RestMethod -Uri "https://api.github.com/repos/microsoft/Winget-cli/releases/latest" -Method Get -ErrorAction Stop
 			$wingetLatestVersion = [System.Version]::Parse(($response.tag_name).Trim('v')) #Stores version number of latest release.
 			$wingetOutdated = $wingetCurrentVersion -lt $wingetLatestVersion
+			Write-Section -Text "Winget is installed" -Color Green
 			# Write-Host "===========================================" -ForegroundColor Green
 			# Write-Host "---        Winget is installed          ---" -ForegroundColor Green
 			# Write-Host "===========================================" -ForegroundColor Green
-			Write-Section -Text "Winget is installed" -Color Green
 			Write-Host "Version: $wingetVersionFull" -ForegroundColor White
 
 			if (!$wingetPreview) {
@@ -113,9 +115,46 @@ function Test-WingetPackageManager {
 			}
 		}
 		else {
-			Write-Host "===========================================" -ForegroundColor Red
-			Write-Host "---      Winget is not installed        ---" -ForegroundColor Red
-			Write-Host "===========================================" -ForegroundColor Red
+			Write-Section -Text "Winget is not installed" -Color Red
+			# Write-Host "===========================================" -ForegroundColor Red
+			# Write-Host "---      Winget is not installed        ---" -ForegroundColor Red
+			# Write-Host "===========================================" -ForegroundColor Red
+			$status = "not-installed"
+		}
+	}
+
+	if ($choco) {
+		if ((Get-Command -Name choco -ErrorAction Ignore) -and ($chocoVersion = (Get-Item "$env:ChocolateyInstall\choco.exe" -ErrorAction Ignore).VersionInfo.ProductVersion)) {
+			Write-Section -Text "Chocolatey is installed" -Color Green
+			# Write-Host "===========================================" -ForegroundColor Green
+			# Write-Host "---      Chocolatey is installed        ---" -ForegroundColor Green
+			# Write-Host "===========================================" -ForegroundColor Green
+			Write-Host "Version: v$chocoVersion" -ForegroundColor White
+			$status = "installed"
+		}
+		else {
+			Write-Section -Text "Chocolatey is not installed" -Color Red
+			# Write-Host "===========================================" -ForegroundColor Red
+			# Write-Host "---    Chocolatey is not installed      ---" -ForegroundColor Red
+			# Write-Host "===========================================" -ForegroundColor Red
+			$status = "not-installed"
+		}
+	}
+
+	if ($scoop) {
+		if (Get-Command -Name scoop -ErrorAction Ignore) {
+			Write-Section -Text "Scoop is installed" -Color Green
+			# Write-Host "===========================================" -ForegroundColor Green
+			# Write-Host "---      Chocolatey is installed        ---" -ForegroundColor Green
+			# Write-Host "===========================================" -ForegroundColor Green
+			# Write-Host "Version: v$scoopVersion" -ForegroundColor White
+			$status = "installed"
+		}
+		else {
+			Write-Section -Text "Scoop is not installed" -Color Red
+			# Write-Host "===========================================" -ForegroundColor Red
+			# Write-Host "---    Chocolatey is not installed      ---" -ForegroundColor Red
+			# Write-Host "===========================================" -ForegroundColor Red
 			$status = "not-installed"
 		}
 	}
@@ -123,16 +162,70 @@ function Test-WingetPackageManager {
 	return $status
 }
 
+<#
+	.SYNOPSIS
+	Downloads the Winget Prereqs.
+
+	.DESCRIPTION
+	Downloads Prereqs for Winget. Version numbers are coded as variables and can be updated as uncommonly as Microsoft updates the prereqs.
+#>
+function Get-WingetPrerequisites {
+	# I don't know of a way to detect the prereqs automatically, so if someone has a better way of defining these, that would be great.
+	# Microsoft.VCLibs version rarely changes, but for future compatibility I made it a variable.
+	$versionVCLibs = "14.00"
+	$fileVCLibs = "https://aka.ms/Microsoft.VCLibs.x64.${versionVCLibs}.Desktop.appx"
+	# Write-Host "$fileVCLibs"
+	# Microsoft.UI.Xaml version changed recently, so I made the version numbers variables.
+	$versionUIXamlMinor = "2.8"
+	$versionUIXamlPatch = "2.8.6"
+	$fileUIXaml = "https://github.com/microsoft/microsoft-ui-xaml/releases/download/v${versionUIXamlPatch}/Microsoft.UI.Xaml.${versionUIXamlMinor}.x64.appx"
+	# Write-Host "$fileUIXaml"
+
+	Try {
+		Write-Host "Downloading Microsoft.VCLibs Dependency..."
+		Invoke-WebRequest -Uri $fileVCLibs -OutFile $ENV:TEMP\Microsoft.VCLibs.x64.Desktop.appx
+		Write-Host "Downloading Microsoft.UI.Xaml Dependency...`n"
+		Invoke-WebRequest -Uri $fileUIXaml -OutFile $ENV:TEMP\Microsoft.UI.Xaml.x64.appx
+	}
+	Catch {
+		throw [WingetFailedInstall]::new('Failed to install prerequsites')
+	}
+}
+
+<#
+	.SYNOPSIS
+	Uses GitHub API to check for the latest release of Winget.
+
+	.DESCRIPTION
+	This function grabs the latest version of Winget and returns the download path to Install-WinUtilWinget for installation.
+#>
+function Get-WingetLatest {
+	Try {
+		# Grabs the latest release of Winget from the Github API for the install process.
+		$response = Invoke-RestMethod -Uri "https://api.github.com/repos/microsoft/Winget-cli/releases/latest" -Method Get -ErrorAction Stop
+		$latestVersion = $response.tag_name #Stores version number of latest release.
+		$licenseWingetUrl = $response.assets.browser_download_url[0] #Index value for License file.
+		Write-Host "Latest Version:`t$($latestVersion)`n"
+		$assetUrl = $response.assets.browser_download_url[2] #Index value for download URL.
+		Invoke-WebRequest -Uri $licenseWingetUrl -OutFile $ENV:TEMP\License1.xml
+		# The only pain is that the msixbundle for winget-cli is 246MB. In some situations this can take a bit, with slower connections.
+		Invoke-WebRequest -Uri $assetUrl -OutFile $ENV:TEMP\Microsoft.DesktopAppInstaller.msixbundle
+	}
+	Catch {
+		throw [WingetFailedInstall]::new('Failed to get latest Winget release and license')
+	}
+}
+
+<#
+	.SYNOPSIS
+	Installs Winget if it is not already installed.
+
+	.DESCRIPTION
+	This function will download the latest version of Winget and install it. If Winget is already installed, it will do nothing.
+#>
 function Install-Winget {
-	<#
 
-    .SYNOPSIS
-        Installs Winget if it is not already installed.
-
-    .DESCRIPTION
-        This function will download the latest version of Winget and install it. If Winget is already installed, it will do nothing.
-    #>
-	$isWingetInstalled = Test-WingetPackageManager -winget
+	$isWingetInstalled = Test-WinPackageManager -winget
 
 	Try {
 		if ($isWingetInstalled -eq "installed") {
@@ -163,9 +256,9 @@ function Install-Winget {
 		# Install Winget via GitHub method.
 		# Used part of my own script with some modification: ruxunderscore/windows-initialization
 		Write-Host "Downloading Winget Prerequsites`n"
-		Get-WinUtilWingetPrerequisites
+		Get-WingetPrerequisites
 		Write-Host "Downloading Winget and License File`r"
-		Get-WinUtilWingetLatest
+		Get-WingetLatest
 		Write-Host "Installing Winget w/ Prerequsites`r"
 		Add-AppxProvisionedPackage -Online -PackagePath $ENV:TEMP\Microsoft.DesktopAppInstaller.msixbundle -DependencyPackagePath $ENV:TEMP\Microsoft.VCLibs.x64.Desktop.appx, $ENV:TEMP\Microsoft.UI.Xaml.x64.appx -LicensePath $ENV:TEMP\License1.xml
 		Write-Host "Manually adding Winget Sources, from Winget CDN."
@@ -194,23 +287,72 @@ function Install-Winget {
 }
 
 <#
-        .SYNOPSIS
-        Prints a text block surrounded by a section divider for enhanced output readability.
+	.SYNOPSIS
+	Installs Chocolatey if it is not already installed
+#>
+function Install-WinChoco {
+	try {
+		Write-Host "Checking if Chocolatey is Installed..."
 
-        .DESCRIPTION
-        This function takes a string input and prints it to the console, surrounded by a section divider made of hash characters.
-        It is designed to enhance the readability of console output.
+		if ((Test-WinPackageManager -choco) -eq "installed") {
+			return
+		}
 
-        .PARAMETER Text
-        The text to be printed within the section divider.
+		Write-Host "Seems Chocolatey is not installed, installing now."
+		Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) -ErrorAction Stop
+		powershell choco feature enable -n allowGlobalConfirmation
 
-				.PARAMETER Color
-				The color that the section will be colored with
+	}
+	Catch {
+		Write-Section -Text "Chocolatey failed to install" -Color Red
+		# Write-Host "===========================================" -Foregroundcolor Red
+		# Write-Host "--     Chocolatey failed to install     ---" -Foregroundcolor Red
+		# Write-Host "===========================================" -Foregroundcolor Red
+	}
+}
 
-        .EXAMPLE
-        Write-Section "Downloading Files..."
-        This command prints the text "Downloading Files..." surrounded by a section divider.
-    #>
+<#
+	.SYNOPSIS
+	Installs Scoop if it is not already installed
+#>
+function Install-WinScoop {
+	try {
+		Write-Host "Checking if Scoop is Installed..."
+
+		if ((Test-WinPackageManager -scoop) -eq "installed") {
+			return
+		}
+
+		Write-Host "Seems Scoop is not installed, installing now."
+
+		Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+		Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
+	}
+	Catch {
+		Write-Section -Text "Scoop failed to install" -Color Red
+		# Write-Host "===========================================" -Foregroundcolor Red
+		# Write-Host "--     Chocolatey failed to install     ---" -Foregroundcolor Red
+		# Write-Host "===========================================" -Foregroundcolor Red
+	}
+}
+
+<#
+	.SYNOPSIS
+	Prints a text block surrounded by a section divider for enhanced output readability.
+
+	.DESCRIPTION
+	This function takes a string input and prints it to the console, surrounded by a section divider made of hash characters.
+	It is designed to enhance the readability of console output.
+
+	.PARAMETER Text
+	The text to be printed within the section divider.
+
+	.PARAMETER Color
+	The color that the section will be colored with
+
+	.EXAMPLE
+	Write-Section "Downloading Files..." -Color Green
+#>
 function Write-Section {
 	[CmdletBinding()]
 	param(
@@ -220,11 +362,7 @@ function Write-Section {
 		[Parameter()]
 		[string]$Color = "Green"
 	)
-	Write-Host ""
 	Write-Host ("=" * ($Text.Length + 24)) -ForegroundColor $Color
 	Write-Host "---         $Text         ---" -ForegroundColor $Color
 	Write-Host ("=" * ($Text.Length + 24)) -ForegroundColor $Color
-	Write-Host ""
 }
-Write-Section -Text "Downloading Files..." -Color Green
-# Install-Winget
