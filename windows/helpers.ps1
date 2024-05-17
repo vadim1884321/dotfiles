@@ -290,7 +290,7 @@ function Install-Winget {
 	.SYNOPSIS
 	Installs Chocolatey if it is not already installed
 #>
-function Install-WinChoco {
+function Install-Choco {
 	try {
 		Write-Host "Checking if Chocolatey is Installed..."
 
@@ -315,7 +315,7 @@ function Install-WinChoco {
 	.SYNOPSIS
 	Installs Scoop if it is not already installed
 #>
-function Install-WinScoop {
+function Install-Scoop {
 	try {
 		Write-Host "Checking if Scoop is Installed..."
 

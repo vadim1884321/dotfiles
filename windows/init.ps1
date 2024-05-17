@@ -1,6 +1,7 @@
 #Requires -RunAsAdministrator
 
-. ".\helpers.ps1"
+# . ".\helpers.ps1"
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/vadim1884321/dotfiles/main/windows/helpers.ps1'))
 # . "$PSScriptRoot\PackageManagers\Install-Winget.ps1.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-WinChoco.ps1"
 # . "$PSScriptRoot\PackageManagers\Install-WinScoop.ps1"
@@ -10,8 +11,8 @@
 Clear-Host
 
 Install-Winget
-Install-WinChoco
-Install-WinScoop
+Install-Choco
+Install-Scoop
 
 # Проверяет устанавлен ли Winget
 # $winget = Get-Command -Name winget -ErrorAction SilentlyContinue
