@@ -129,6 +129,9 @@ QuickAccessRecentFiles -Hide # -Show (значение по умолчанию),
 # Скрыть недавно используемые папки на панели быстрого доступа
 QuickAccessFrequentFolders -Hide # -Show (значение по умолчанию), -Hide
 
+# Скрыть отображение файлов из Office.com в проводнике
+ShowFilesOffice -Hide # -Show (значение по умолчанию), -Hide
+
 # Скрыть кнопку "Мини-приложения" с панели задач
 TaskbarWidgets -Show # -Show (значение по умолчанию), -Hide
 

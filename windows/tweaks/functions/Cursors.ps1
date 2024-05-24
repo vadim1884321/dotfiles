@@ -29,8 +29,7 @@
 	.NOTES
 	Current user
 #>
-function Cursors
-{
+function Cursors {
 	param
 	(
 		[Parameter(
@@ -55,12 +54,9 @@ function Cursors
 		$Default
 	)
 
-	switch ($PSCmdlet.ParameterSetName)
-	{
-		"Dark"
-		{
-			try
-			{
+	switch ($PSCmdlet.ParameterSetName) {
+		"Dark" {
+			try {
 				# Check the internet connection
 				$Parameters = @{
 					Name        = "dns.msftncsi.com"
@@ -68,13 +64,11 @@ function Cursors
 					DnsOnly     = $true
 					ErrorAction = "Stop"
 				}
-				if ((Resolve-DnsName @Parameters).IPAddress -notcontains "131.107.255.255")
-				{
+				if ((Resolve-DnsName @Parameters).IPAddress -notcontains "131.107.255.255") {
 					return
 				}
 
-				try
-				{
+				try {
 					# Check whether https://github.com is alive
 					$Parameters = @{
 						Uri              = "https://github.com"
@@ -82,8 +76,7 @@ function Cursors
 						DisableKeepAlive = $true
 						UseBasicParsing  = $true
 					}
-					if (-not (Invoke-WebRequest @Parameters).StatusDescription)
-					{
+					if (-not (Invoke-WebRequest @Parameters).StatusDescription) {
 						Write-Information -MessageData "" -InformationAction Continue
 						Write-Verbose -Message $Localization.Skipped -Verbose
 
@@ -92,15 +85,14 @@ function Cursors
 
 					$DownloadsFolder = Get-ItemPropertyValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" -Name "{374DE290-123F-4565-9164-39C4925E467B}"
 					$Parameters = @{
-						Uri             = "https://github.com/farag2/Sophia-Script-for-Windows/raw/master/Misc/dark.zip"
+						Uri             = "https://github.com/vadim1884321/dotfiles/raw/main/windows/Cursors/dark.zip"
 						OutFile         = "$DownloadsFolder\dark.zip"
 						UseBasicParsing = $true
 						Verbose         = $true
 					}
 					Invoke-WebRequest @Parameters
 
-					if (-not (Test-Path -Path "$env:SystemRoot\Cursors\W11_dark_v2.2"))
-					{
+					if (-not (Test-Path -Path "$env:SystemRoot\Cursors\W11_dark_v2.2")) {
 						New-Item -Path "$env:SystemRoot\Cursors\W11_dark_v2.2" -ItemType Directory -Force
 					}
 
@@ -140,8 +132,7 @@ function Cursors
 					New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name UpArrow -PropertyType ExpandString -Value "%SystemRoot%\Cursors\W11_dark_v2.2\alternate.cur" -Force
 					New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name Wait -PropertyType ExpandString -Value "%SystemRoot%\Cursors\W11_dark_v2.2\busy.ani" -Force
 
-					if (-not (Test-Path -Path "HKCU:\Control Panel\Cursors\Schemes"))
-					{
+					if (-not (Test-Path -Path "HKCU:\Control Panel\Cursors\Schemes")) {
 						New-Item -Path "HKCU:\Control Panel\Cursors\Schemes" -Force
 					}
 					[string[]]$Schemes = (
@@ -169,26 +160,22 @@ function Cursors
 
 					Remove-Item -Path "$DownloadsFolder\dark.zip" -Force
 				}
-				catch [System.Net.WebException]
-				{
+				catch [System.Net.WebException] {
 					Write-Warning -Message ($Localization.NoResponse -f "https://github.com")
 					Write-Error -Message ($Localization.NoResponse -f "https://github.com") -ErrorAction SilentlyContinue
 
 					Write-Error -Message ($Localization.RestartFunction -f $MyInvocation.Line.Trim()) -ErrorAction SilentlyContinue
 				}
 			}
-			catch [System.ComponentModel.Win32Exception]
-			{
+			catch [System.ComponentModel.Win32Exception] {
 				Write-Warning -Message $Localization.NoInternetConnection
 				Write-Error -Message $Localization.NoInternetConnection -ErrorAction SilentlyContinue
 
 				Write-Error -Message ($Localization.RestartFunction -f $MyInvocation.Line.Trim()) -ErrorAction SilentlyContinue
 			}
 		}
-		"Light"
-		{
-			try
-			{
+		"Light" {
+			try {
 				# Check the internet connection
 				$Parameters = @{
 					Name        = "dns.msftncsi.com"
@@ -196,13 +183,11 @@ function Cursors
 					DnsOnly     = $true
 					ErrorAction = "Stop"
 				}
-				if ((Resolve-DnsName @Parameters).IPAddress -notcontains "131.107.255.255")
-				{
+				if ((Resolve-DnsName @Parameters).IPAddress -notcontains "131.107.255.255") {
 					return
 				}
 
-				try
-				{
+				try {
 					# Check whether https://github.com is alive
 					$Parameters = @{
 						Uri              = "https://github.com"
@@ -210,8 +195,7 @@ function Cursors
 						DisableKeepAlive = $true
 						UseBasicParsing  = $true
 					}
-					if (-not (Invoke-WebRequest @Parameters).StatusDescription)
-					{
+					if (-not (Invoke-WebRequest @Parameters).StatusDescription) {
 						Write-Information -MessageData "" -InformationAction Continue
 						Write-Verbose -Message $Localization.Skipped -Verbose
 
@@ -220,15 +204,14 @@ function Cursors
 
 					$DownloadsFolder = Get-ItemPropertyValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" -Name "{374DE290-123F-4565-9164-39C4925E467B}"
 					$Parameters = @{
-						Uri             = "https://github.com/farag2/Sophia-Script-for-Windows/raw/master/Misc/light.zip"
+						Uri             = "https://github.com/vadim1884321/dotfiles/raw/main/windows/Cursors/light.zip"
 						OutFile         = "$DownloadsFolder\light.zip"
 						UseBasicParsing = $true
 						Verbose         = $true
 					}
 					Invoke-WebRequest @Parameters
 
-					if (-not (Test-Path -Path "$env:SystemRoot\Cursors\W11_light_v2.2"))
-					{
+					if (-not (Test-Path -Path "$env:SystemRoot\Cursors\W11_light_v2.2")) {
 						New-Item -Path "$env:SystemRoot\Cursors\W11_light_v2.2" -ItemType Directory -Force
 					}
 
@@ -266,15 +249,14 @@ function Cursors
 					New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name UpArrow -PropertyType ExpandString -Value "%SystemRoot%\Cursors\W11_light_v2.2\alternate.cur" -Force
 					New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name Wait -PropertyType ExpandString -Value "%SystemRoot%\Cursors\W11_light_v2.2\busy.ani" -Force
 
-					if (-not (Test-Path -Path "HKCU:\Control Panel\Cursors\Schemes"))
-					{
+					if (-not (Test-Path -Path "HKCU:\Control Panel\Cursors\Schemes")) {
 						New-Item -Path "HKCU:\Control Panel\Cursors\Schemes" -Force
 					}
 					[string[]]$Schemes = (
 						"%SystemRoot%\Cursors\W11_light_v2.2\pointer.cur",
 						"%SystemRoot%\Cursors\W11_light_v2.2\help.cur",
 						"%SystemRoot%\Cursors\W11_light_v2.2\working.ani",
-						"%SystemRoot%\Cursors\W11_light_v2.2\busy.ani",,
+						"%SystemRoot%\Cursors\W11_light_v2.2\busy.ani", ,
 						"%SystemRoot%\Cursors\W11_light_v2.2\precision.cur",
 						"%SystemRoot%\Cursors\W11_light_v2.2\beam.cur",
 						"%SystemRoot%\Cursors\W11_light_v2.2\handwriting.cur",
@@ -295,24 +277,21 @@ function Cursors
 
 					Remove-Item -Path "$DownloadsFolder\light.zip" -Force
 				}
-				catch [System.Net.WebException]
-				{
+				catch [System.Net.WebException] {
 					Write-Warning -Message ($Localization.NoResponse -f "https://github.com")
 					Write-Error -Message ($Localization.NoResponse -f "https://github.com") -ErrorAction SilentlyContinue
 
 					Write-Error -Message ($Localization.RestartFunction -f $MyInvocation.Line.Trim()) -ErrorAction SilentlyContinue
 				}
 			}
-			catch [System.ComponentModel.Win32Exception]
-			{
+			catch [System.ComponentModel.Win32Exception] {
 				Write-Warning -Message $Localization.NoInternetConnection
 				Write-Error -Message $Localization.NoInternetConnection -ErrorAction SilentlyContinue
 
 				Write-Error -Message ($Localization.RestartFunction -f $MyInvocation.Line.Trim()) -ErrorAction SilentlyContinue
 			}
 		}
-		"Default"
-		{
+		"Default" {
 			New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name "(default)" -PropertyType String -Value "" -Force
 			New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name AppStarting -PropertyType ExpandString -Value "%SystemRoot%\cursors\aero_working.ani" -Force
 			New-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name Arrow -PropertyType ExpandString -Value "%SystemRoot%\cursors\aero_arrow.cur" -Force

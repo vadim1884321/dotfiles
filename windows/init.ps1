@@ -383,7 +383,38 @@ scoop install main/git
 scoop bucket add extras
 scoop bucket add nerd-fonts
 scoop update
+
+# Install app
+scoop alias add i 'scoop install $args[0]' 'Install app'
+scoop alias add add 'scoop install $args[0]' 'Install app'
+
+# Clear cache
+scoop alias add cc 'scoop cache rm *' 'Clear the entire cache'
+scoop alias add clear 'scoop cache rm *' 'Clear the entire cache'
+
+# Uninstall app
+scoop alias add rm 'scoop uninstall $args[0]' 'Uninstall an app'
+scoop alias add remove 'scoop uninstall $args[0]' 'Uninstall an app'
+
+# List apps
+scoop alias add ls 'scoop list' 'List installed apps'
+
+# Show status
+scoop alias add s 'scoop status' 'Show status and check for new app versions'
+
+# Update
+scoop alias add u 'scoop update $args[0]' 'Update apps, or Scoop itself'
+scoop alias add upgrade 'scoop update $args[0]' 'Update apps, or Scoop itself'
+
+# Update all apps
+scoop alias add ua 'scoop update $args[0]' 'Update apps, or Scoop itself'
+scoop alias add upgrade-all 'scoop update $args[0]' 'Update apps, or Scoop itself'
+
 scoop install main/openssh
+scoop install main/oh-my-posh
+scoop install nerd-fonts/Cascadia-Code
+scoop install nerd-fonts/JetBrainsMono-NF
+scoop install nerd-fonts/FiraCode-NF
 
 Write-Host "Clone dotfiles repository..." -ForegroundColor Cyan
 git clone https://github.com/vadim1884321/dotfiles.git

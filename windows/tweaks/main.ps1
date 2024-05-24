@@ -25,6 +25,7 @@
 . "$PSScriptRoot\functions\FileTransferDialog.ps1"
 . "$PSScriptRoot\functions\QuickAccessRecentFiles.ps1"
 . "$PSScriptRoot\functions\QuickAccessFrequentFolders.ps1"
+. "$PSScriptRoot\functions\ShowFilesOffice.ps1"
 . "$PSScriptRoot\functions\TaskbarWidgets.ps1"
 . "$PSScriptRoot\functions\TaskbarSearch.ps1"
 . "$PSScriptRoot\functions\SearchHighlights.ps1"

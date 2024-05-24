@@ -46,7 +46,7 @@ New-ItemProperty -Path $path -Name HideFirstRunExperience -Type Dword -Value 1 -
 # запретить автоматический импорт данных из других браузеров
 New-ItemProperty -Path $path -Name AutoImportAtFirstRun -Type Dword -Value 4 -Force | Out-Null
 # запретить синхронизацию и предложение включить ее
-# New-ItemProperty -Path $path -Name SyncDisabled -Type Dword -Value 1 -Force | Out-Null
+New-ItemProperty -Path $path -Name SyncDisabled -Type Dword -Value 1 -Force | Out-Null
 # запретить вход в браузер и предложение войти (также отключает синхронизацию)
 New-ItemProperty -Path $path -Name BrowserSignin -Type Dword -Value 0 -Force | Out-Null
 
@@ -54,8 +54,8 @@ New-ItemProperty -Path $path -Name BrowserSignin -Type Dword -Value 0 -Force | O
 # новая вкладка
 
 # удалить заданные адреса домашней страницы и новой вкладки
-# Remove-ItemProperty -Path $path -Name HomePageLocation -ErrorAction SilentlyContinue
-# Remove-ItemProperty -Path $path -Name NewTabPageLocation -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $path -Name HomePageLocation -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $path -Name NewTabPageLocation -ErrorAction SilentlyContinue
 
 # вид и содержимое новой вкладки
 New-ItemProperty -Path $path -Name NewTabPageContentEnabled -Type Dword -Value 0 -Force | Out-Null

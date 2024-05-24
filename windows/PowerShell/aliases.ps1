@@ -32,26 +32,6 @@ function HKLM: { Set-Location HKLM: }
 function HKCU: { Set-Location HKCU: }
 function Env: { Set-Location Env: }
 
-
-# Directory Listing: Use `ls.exe` if available
-# if (Get-Command eza.exe -ErrorAction SilentlyContinue | Test-Path) {
-# 	rm alias:ls -ErrorAction SilentlyContinue
-# 	# Set `ls` to call `ls.exe` and always use --color
-# 	${function:ls} = { eza.exe --color @args }
-# 	# List all files in long format
-# 	${function:l} = { ls -lF @args }
-# 	# List all files in long format, including hidden files
-# 	${function:la} = { ls -laF @args }
-# 	# List only directories
-# 	${function:lsd} = { Get-ChildItem -Directory -Force @args }
-# }
-# else {
-# 	# List all files, including hidden files
-# 	${function:la} = { ls -Force @args }
-# 	# List only directories
-# 	${function:lsd} = { Get-ChildItem -Directory -Force @args }
-# }
-
 function gcom {
 	git add .
 	git commit -m "$args"
@@ -113,13 +93,6 @@ function tail {
 	param($Path, $n = 10)
 	Get-Content $Path -Tail $n
 }
-
-# Git dotfiles
-${function:config} = { git.exe --git-dir="$HOME\dotfiles.git\" --work-tree=$HOME @args }
-${function:configs} = { config status -s --untracked-files=no }
-${function:configc} = { Write-Host 'Configuration:'; config add ~/dotfiles; configs; config commit --untracked-files=no -a -m "Automatic update"; }
-
-# Import-Module git-aliases -DisableNameChecking
 
 # Stop & Restart the Windows explorer process
 function Restart-Explorer {
