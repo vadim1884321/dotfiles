@@ -17,4 +17,5 @@ source .install/pacman.sh
 source .install/install_aur.sh
 source .install/paru.sh
 source .install/zsh.sh
+source .install/test.sh
 # source .install/install_shell.sh

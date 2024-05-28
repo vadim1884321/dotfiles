@@ -7,7 +7,6 @@ install_zsh_packages() {
 		zsh-autosuggestions
 		zsh-completions
 		zsh-history-substring-search
-		zsh-syntax-highlighting
 		zsh-fast-syntax-highlighting
 	)
 	for pkg in "${zsh_packages[@]}"; do
@@ -23,10 +22,3 @@ else
 	sudo pacman -S --noconfirm zsh
 	install_zsh_packages
 fi
-# zsh
-
-# oh-my-zsh-git
-# zsh-autosuggestions
-# zsh-completions
-# zsh-history-substring-search
-# zsh-syntax-highlighting
