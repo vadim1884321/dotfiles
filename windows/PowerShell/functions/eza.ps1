@@ -10,7 +10,7 @@ if (Get-Command eza -ErrorAction SilentlyContinue | Test-Path) {
 	function la { ls -lbhHigUmuSa @args }
 	function lx { ls -lbhHigUmuSa@ @args }
 	function tree { ls --tree @args }
-	function lsd { ls -D @args }
+	# function lsd { ls -D @args }
 	function lsf { ls -f @args }
 }
 else {
