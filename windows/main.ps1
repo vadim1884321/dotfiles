@@ -273,7 +273,7 @@ SaveZoneInformation -Disable # -Enable (значение по умолчанию
 	Действительные IPv4-адреса: 1.0.0.1, 1.1.1.1, 149.112.112.112, 8.8.4.4, 8.8.8.8, 9.9.9.9 или
 	Включить DNS-over-HTTPS для IPv4 через DNS-сервер Comss.one. Применимо только для России
 #>
-DNSoverHTTPS -ComssOneDNS # -Disable (значение по умолчанию), -Enable, -ComssOneDNS
+DNSoverHTTPS -ComssOneDNS # -Disable (значение по умолчанию), -Enable -PrimaryDNS 1.1.1.1 -SecondaryDNS 1.0.0.1, -ComssOneDNS
 
 # Отобразить пункт "Открыть в Терминале Windows" в контекстном меню папок
 OpenWindowsTerminalContext -Show # -Show (значение по умолчанию), -Hide
