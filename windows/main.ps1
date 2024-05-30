@@ -278,6 +278,6 @@ DNSoverHTTPS -Disable # -Disable (значение по умолчанию), -En
 OpenWindowsTerminalContext -Show # -Show (значение по умолчанию), -ComssOneDNS
 
 # Открывать Windows Terminal из контекстного меню от имени администратора по умолчанию или скрыть пункт
-OpenWindowsTerminalAdminContext -Enable # -Disable (значение по умолчанию), -Enable, -Hide
+OpenWindowsTerminalAdminContext -Disable # -Disable (значение по умолчанию), -Enable, -Hide
 
 Write-Host "Finished!" -ForegroundColor Green
