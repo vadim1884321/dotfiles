@@ -9,10 +9,15 @@ if (Test-Path "$PSScriptRoot\functions.ps1") {
 }
 
 # Load functions declarations from separate configuration file.
-if (Test-Path "$HOME\scoop\shims\oh-my-posh.exe") {
+if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
 	oh-my-posh init pwsh --config "$PSScriptRoot\..\oh-my-posh\my-theme2.omp.json" | Invoke-Expression
 }
-# Invoke-Expression (&starship init powershell)
+
+if ((Get-Command starship -ErrorAction SilentlyContinue) -and (!(Get-Command oh-my-posh -ErrorAction SilentlyContinue))) {
+	Invoke-Expression (&starship init powershell)
+}
+
+
 
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
 	Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
@@ -53,3 +58,4 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' `
 	-PSReadlineChordReverseHistory 'Ctrl+r'
 # Override default tab completion
 Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+# fnm env --use-on-cd | Out-String | Invoke-Expression
