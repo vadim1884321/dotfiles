@@ -14,8 +14,9 @@ source ./arch/.install/global_fn.sh
 source ./arch/.install/locale.sh
 source ./arch/.install/repo.sh
 source ./arch/.install/pacman.sh
-source ./arch/.install/install_aur.sh
-source ./arch/.install/paru.sh
-source ./arch/.install/zsh.sh
-source ./arch/.install/test.sh
+source ./arch/.install/aur.sh
+source ./arch/.install/shell.sh
+source ./arch/.install/install_pkg.sh
+# source ./arch/.install/test.sh
+
 # source .install/install_shell.sh

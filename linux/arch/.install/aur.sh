@@ -1,17 +1,24 @@
 #!/bin/bash
 
+aurList=(yay paru)
+
 if chk_list "aurhlpr" "${aurList[@]}"; then
 	echo -e "\033[0;33m[Skip]\033[0m ${aurhlpr} is already installed..."
 else
-	echo -e "Available aur helpers:\n[1] yay\n[2] paru"
-	prompt_timer 120 "Enter option number"
+	echo -e "\u001b[32;1m Installation aur helpers...\u001b[0m"
+	echo -e " \u001b[37;1m\u001b[4mSelect an option:\u001b[0m"
+	echo -e "  \u001b[34;1m (1) Install Yay \u001b[0m"
+	echo -e "  \u001b[34;1m (2) Install Paru \u001b[0m"
+	echo -e "  \u001b[33;1m (*) Anything else to return main menu...\u001b[0m"
+	echo -en "\u001b[32;1m ==> \u001b[0m"
 
-	case "${promptIn}" in
+	read -r option
+	case $option in
 	1) export aurhlpr="yay" ;;
 	2) export aurhlpr="paru" ;;
 	*)
-		echo -e "...Invalid option selected..."
-		exit 1
+		echo -e "\u001b[32;1m Return to main menu... \u001b[0m"
+		source ./setup.sh
 		;;
 	esac
 
@@ -41,4 +48,17 @@ else
 	rm -rf "$HOME/Clone"
 
 	echo -e "\033[0;32m[${aurhlpr}]\033[0m aur helper installed..."
+fi
+
+if [ "$aurhlpr" == "paru" ]; then
+	if [ -f /etc/paru.conf ] && [ ! -f /etc/paru.conf.backup ]; then
+		echo -e "\033[0;32m[Paru]\033[0m setting up a paru..."
+
+		sudo cp /etc/paru.conf /etc/paru.conf.backup
+		sudo sed -i "/^#BottomUp/c\BottomUp" /etc/paru.conf
+
+		paru
+	else
+		echo -e "\033[0;33m[Skip]\033[0m paru is already configured..."
+	fi
 fi

@@ -1,16 +1,14 @@
 #!/bin/bash
 
-#!/bin/bash
-
 LOCAL_CONFIG="$HOME/.config/shell/local.sh"
 
 declare -a common_packages=(
-	curl #wget git zsh vim bat fzf eza jq ripgrep zoxide unzip neovim helix
+	curl wget git vim bat fzf eza jq ripgrep zoxide unzip neovim helix
 )
 
-install_arch() {
-	sudo pacman -S --noconfirm "${common_packages[@]}" #github-cli fd git-delta lazygit wl-clipboard topgrade
-}
+# install_arch() {
+# 	sudo pacman -S --noconfirm "${common_packages[@]}" github-cli fd git-delta lazygit wl-clipboard topgrade
+# }
 
 install_debian() {
 	sudo apt install "${common_packages[@]}" gh fd-find xclip autorandr nala topgrade
@@ -37,7 +35,7 @@ install_packages() {
 
 	case $system_kind in
 	arch) ./arch/install.sh ;;
-	ubuntu) install_debian ;;
+	ubuntu) ./debian/install.sh ;;
 	debian) install_debian ;;
 	termux) install_termux ;;
 	*) echo "Unknown system!" && exit 1 ;;
@@ -48,20 +46,18 @@ install_packages() {
 
 install_oh_my_zsh() {
 	echo -e "\u001b[7m Installing oh-my-zsh...\u001b[0m"
-	mkdir "$HOME"/.config/zsh
-	export ZDOTDIR=$HOME/.config/zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 	echo -e "\u001b[7m Installing zsh plugins...\u001b[0m"
 	gh="https://github.com/"
-	omz="$ZDOTDIR/.oh-my-zsh/custom"
-	omz_plugin="$omz/plugins/"
+	# omz="$ZDOTDIR/ohmyzsh/custom"
+	omz_plugin="$HOME/.oh-my-zsh/custom/plugins/"
 
 	cd "$omz_plugin" || exit
 	git clone "$gh/zsh-users/zsh-autosuggestions"
 	git clone "$gh/zsh-users/zsh-completions"
 	git clone "$gh/zsh-users/zsh-history-substring-search"
-	git clone "$gh/zdharma-continuum/fast-syntax-highlighting"
+	git clone "$gh/zsh-users/zsh-syntax-highlighting"
 	git clone "$gh/djui/alias-tips"
 	git clone "$gh/unixorn/git-extra-commands"
 	git clone "$gh/Aloxaf/fzf-tab"
@@ -69,7 +65,7 @@ install_oh_my_zsh() {
 	# git clone "$gh/marlonrichert/zsh-autocomplete"
 	cd - || exit
 
-	chsh -s "$(which zsh)"
+	chsh -s /usr/bin/zsh
 }
 
 install_extras() {
@@ -123,17 +119,17 @@ show_menu() {
 	echo -e "  \u001b[34;1m (2) Install Extras \u001b[0m"
 	echo -e "  \u001b[34;1m (3) Backup Configs \u001b[0m"
 	echo -e "  \u001b[34;1m (4) Setup Symlinks \u001b[0m"
-	echo -e "  \u001b[31;1m (*) Anything else to exit \u001b[0m"
+	echo -e "  \u001b[33;1m (*) Anything else to exit \u001b[0m"
 	echo -en "\u001b[32;1m ==> \u001b[0m"
 
 	read -r option
 	case $option in
-	"0") setup_dotfiles ;;
-	"1") install_packages ;;
-	"2") install_extras ;;
-	"3") backup_configs ;;
-	"4") setup_symlinks ;;
-	*) echo -e "\u001b[31;1m alvida and adios! \u001b[0m" && exit 0 ;;
+	0) setup_dotfiles ;;
+	1) install_packages ;;
+	2) install_extras ;;
+	3) backup_configs ;;
+	4) setup_symlinks ;;
+	*) echo -e "\u001b[32;1m alvida and adios! \u001b[0m" && exit 0 ;;
 	esac
 }
 
