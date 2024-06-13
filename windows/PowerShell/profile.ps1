@@ -48,7 +48,7 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 $env:FZF_DEFAULT_OPTS = '--height 50% --layout=reverse --border'
-
+# $env:BW_SESSION = "$env:BW_SESSION"
 function ff {
 	nvim $(fzf --preview 'bat --color=always {}' --preview-window '~3')
 }
