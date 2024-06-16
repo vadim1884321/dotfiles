@@ -384,33 +384,34 @@ scoop bucket add extras
 scoop bucket add nerd-fonts
 scoop update
 
-# Install app
-scoop alias add i 'scoop install $args[0]' 'Install app'
-scoop alias add add 'scoop install $args[0]' 'Install app'
+# Aliases for Scoop
+# Install app(s)
+scoop alias add i 'foreach ($_ in $args) {scoop install $_}' 'Alias for Install apps'
+scoop alias add add 'foreach ($_ in $args) {scoop install $_}' 'Alias for Install apps'
 
 # Clear cache
-scoop alias add cc 'scoop cache rm *' 'Clear the entire cache'
-scoop alias add clear 'scoop cache rm *' 'Clear the entire cache'
+scoop alias add cc 'scoop cache rm *' 'Alias for Clear the entire cache'
+scoop alias add clear 'scoop cache rm *' 'Alias for Clear the entire cache'
 
-# Uninstall app
-scoop alias add rm 'scoop uninstall $args[0]' 'Uninstall an app'
-scoop alias add remove 'scoop uninstall $args[0]' 'Uninstall an app'
+# Uninstall app(s)
+scoop alias add rm 'foreach ($_ in $args) {scoop uninstall $_}' 'Alias for Uninstall apps'
+scoop alias add remove 'foreach ($_ in $args) {scoop uninstall $_}' 'Alias for Uninstall apps'
 
 # List apps
-scoop alias add ls 'scoop list' 'List installed apps'
+scoop alias add ls 'scoop list' 'Alias for List installed apps'
 
 # Show status
-scoop alias add s 'scoop status' 'Show status and check for new app versions'
+scoop alias add s 'scoop status' 'Alias for Show status and check for new app versions'
 
-# Update
-scoop alias add u 'scoop update $args[0]' 'Update apps, or Scoop itself'
-scoop alias add upgrade 'scoop update $args[0]' 'Update apps, or Scoop itself'
+# Update app(s)
+scoop alias add u 'foreach ($_ in $args) {scoop update $_}' 'Alias for Update apps, or Scoop itself'
+scoop alias add upgrade 'foreach ($_ in $args) {scoop update $_}' 'Alias for Update apps, or Scoop itself'
 
 # Update all apps
-scoop alias add ua 'scoop update $args[0]' 'Update apps, or Scoop itself'
-scoop alias add upgrade-all 'scoop update $args[0]' 'Update apps, or Scoop itself'
+scoop alias add ua 'scoop update *' 'Alias for Update apps, or Scoop itself'
+scoop alias add upgrade-all 'scoop update *' 'Alias for Update apps, or Scoop itself'
 
-scoop install main/openssh
+# scoop install main/openssh
 scoop install main/oh-my-posh
 scoop install nerd-fonts/Cascadia-Code
 scoop install nerd-fonts/JetBrainsMono-NF
