@@ -11,6 +11,7 @@ if (Test-Path "$PSScriptRoot\functions.ps1") {
 # Load functions declarations from separate configuration file.
 if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
 	oh-my-posh init pwsh --config "$PSScriptRoot\..\oh-my-posh\my-theme2.omp.json" | Invoke-Expression
+	# oh-my-posh init pwsh --config "$HOME\scoop\apps\oh-my-posh\current\themes\powerlevel10k_lean.omp.json" | Invoke-Expression
 }
 
 if ((Get-Command starship -ErrorAction SilentlyContinue) -and (!(Get-Command oh-my-posh -ErrorAction SilentlyContinue))) {

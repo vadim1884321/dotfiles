@@ -42,7 +42,7 @@ function lazyg {
 	git push
 }
 function Get-PubIP {
-    (Invoke-WebRequest http://ifconfig.me/ip ).Content
+	(Invoke-WebRequest http://ifconfig.me/ip ).Content
 }
 
 function find-file($name) {
@@ -71,7 +71,7 @@ function df {
 	get-volume
 }
 function sed($file, $find, $replace) {
-    (Get-Content $file).replace("$find", $replace) | Set-Content $file
+	(Get-Content $file).replace("$find", $replace) | Set-Content $file
 }
 function which($name) {
 	Get-Command $name | Select-Object -ExpandProperty Definition
@@ -108,3 +108,17 @@ function Restart-Explorer {
 
 	Write-Output ""
 }
+function sci { scoop install @args }
+function scs { scoop status }
+function scls { scoop list }
+function scf { scoop search @args }
+function scu { scoop update @args }
+function scua { scoop update * }
+function scr { scoop uninstall @args }
+
+function wgi { winget install -e -h --accept-package-agreements --accept-source-agreements @args }
+function wgf { winget search @args }
+function wgs { winget list --upgrade-available @args }
+function wgls { winget list @args }
+function wgu { winget upgrade -e -h --accept-package-agreements --accept-source-agreements @args }
+function wgua { winget upgrade --all --silent --force --accept-package-agreements --accept-source-agreements | Out-Null }
