@@ -4,3 +4,12 @@
 # . "$PSScriptRoot\DiskO.ps1"
 . "$PSScriptRoot\PowerToys.ps1"
 # . "$PSScriptRoot/ccleaner.ps1"
+$symlinks = @{
+	"$HOME\AppData\Local\nvim"                                                                      = ".\nvim"
+	"$HOME\AppData\Local\fastfetch"                                                                 = ".\fastfetch"
+	"$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" = ".\windowsterminal\settings.json"
+	"$HOME\.gitconfig"                                                                              = ".\.gitconfig"
+	"$HOME\AppData\Roaming\lazygit"                                                                 = ".\lazygit"
+	"$HOME\AppData\Roaming\AltSnap\AltSnap.ini"                                                     = ".\altsnap\AltSnap.ini"
+	"$ENV:PROGRAMFILES\WezTerm\wezterm_modules"                                                     = ".\wezterm\"
+}

@@ -1,9 +1,10 @@
 # NixOS
 try {
-	$oldEncoding = [Console]::OutputEncoding
+	$originalEncoding = [Console]::OutputEncoding
 	[Console]::OutputEncoding = [Text.Encoding]::Unicode  # on Windows: UTF-16 LE
-	if (!(wsl -l | Where-Object { $_ -match "^NixOS" })) {
-		[Console]::OutputEncoding = $oldEncoding
+	$checkDistribution = wsl -l | Where-Object { $_ -match "^NixOS" }
+	[Console]::OutputEncoding = $originalEncoding
+	if (!($checkDistribution)) {
 		[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 		Write-Host "NixOS WSL download and installation..." -ForegroundColor Cyan
@@ -24,6 +25,7 @@ try {
 
 		Set-Location $env:USERPROFILE\NixOS\
 		wsl --import NixOS . .\nixos-wsl.tar.gz
+		Set-Location -
 		# wsl -d NixOS # Если нужно сделать дистрибутив по умолчанию
 
 		Write-Host "NixOS installation is complete." -ForegroundColor Green

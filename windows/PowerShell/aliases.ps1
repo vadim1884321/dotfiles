@@ -1,33 +1,22 @@
+# Ярлыки навигации
+function dev { if (Test-Path ~\dev) { Set-Location ~\dev } }
+function pro { if (Test-Path ~\projects) { Set-Location ~\projects } }
+function pics { if (Test-Path ~\Pictures) { Set-Location ~\Pictures } }
+function dt { if (Test-Path ~\Desktop) { Set-Location ~\Desktop } }
+function docs { if (Test-Path ~\Documents) { Set-Location ~\Documents } }
+function music { if (Test-Path ~\Music) { Set-Location ~\Music } }
+function videos { if (Test-Path ~\Videos) { Set-Location ~\Videos } }
+function dl { if (Test-Path ~\Downloads) { Set-Location ~\Downloads } }
 
-# Easier Navigation: .., ..., ...., ....., and ~
-${function:~} = { Set-Location ~ }
-${function:Set-ParentLocation} = { Set-Location .. }; Set-Alias ".." Set-ParentLocation
-${function:...} = { Set-Location ..\.. }
-${function:....} = { Set-Location ..\..\.. }
-${function:.....} = { Set-Location ..\..\..\.. }
-${function:......} = { Set-Location ..\..\..\..\.. }
-# function ~ { Set-Location ~ }
-# function Set-ParentLocation = { Set-Location .. }
+# Время
+function time { Get-Date -Format "HH:mm:ss" }
 
-# Navigation Shortcuts
-${function:dev} = { Set-Location ~\dev }
-function dev {}
-${function:pro} = { Set-Location ~\projects }
-${function:pics} = { Set-Location ~\Pictures }
-${function:dt} = { Set-Location ~\Desktop }
-${function:docs} = { Set-Location ~\Documents }
-${function:music} = { Set-Location ~\Music }
-${function:videos} = { Set-Location ~\Videos }
-${function:dl} = { Set-Location ~\Downloads }
-
-${function:time} = { Get-Date -Format "HH:mm:ss" }
-
-# Compute file hashes - useful for checking successful downloads
+# Вычисление хэш-суммы файла
 function md5 { Get-FileHash -Algorithm MD5 $args }
 function sha1 { Get-FileHash -Algorithm SHA1 $args }
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
 
-# Drive shortcuts
+# Ярлыки для устройств
 function HKLM: { Set-Location HKLM: }
 function HKCU: { Set-Location HKCU: }
 function Env: { Set-Location Env: }
@@ -94,9 +83,9 @@ function tail {
 	Get-Content $Path -Tail $n
 }
 
-# Stop & Restart the Windows explorer process
+# Перезапуск проводника Windows
 function Restart-Explorer {
-	Write-Output "> Restarting Windows explorer to apply all changes. Note: This may cause some flickering."
+	Write-Output "Перезапуск проводника Windows."
 
 	Start-Sleep 0.3
 
@@ -108,6 +97,7 @@ function Restart-Explorer {
 
 	Write-Output ""
 }
+
 function sci { scoop install @args }
 function scs { scoop status }
 function scls { scoop list }
@@ -121,4 +111,5 @@ function wgf { winget search @args }
 function wgs { winget list --upgrade-available @args }
 function wgls { winget list @args }
 function wgu { winget upgrade -e -h --accept-package-agreements --accept-source-agreements @args }
-function wgua { winget upgrade --all --silent --force --accept-package-agreements --accept-source-agreements | Out-Null }
+function wgua { winget upgrade --all -h --force --accept-package-agreements --accept-source-agreements @args }
+function wgr { winget uninstall -h --accept-source-agreements --disable-interactivity @args }

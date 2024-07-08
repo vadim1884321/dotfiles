@@ -75,6 +75,9 @@ TelegramGroupTitle                        = Join our official Telegram group.
 TelegramChannelTitle                      = Join our official Telegram channel.
 DiscordChannelTitle                       = Join our official Discord channel.
 Uninstall                                 = Uninstall
+ConfigPowershellProfile                   = Setting up a PowerShell profile...
+ConfigSuccessfully                        = completed successfully!
+ConfigFailure                             = it ended in failure.
 '@
 
 # SIG # Begin signature block

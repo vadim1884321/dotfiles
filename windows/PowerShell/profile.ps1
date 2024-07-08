@@ -18,13 +18,15 @@ if ((Get-Command starship -ErrorAction SilentlyContinue) -and (!(Get-Command oh-
 	Invoke-Expression (&starship init powershell)
 }
 
-
+if (Get-Command fnm -ErrorAction SilentlyContinue) {
+	fnm env --use-on-cd | Out-String | Invoke-Expression
+}
 
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
 	Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
 }
 
-$modules = ("git-aliases")
+$modules = ("git-aliases", "powershell-yaml")
 $modules | ForEach-Object {
 	if (Get-Module -ListAvailable -Name $_) {
 		Import-Module $_ -DisableNameChecking
@@ -32,7 +34,7 @@ $modules | ForEach-Object {
 }
 
 if (Get-Module -ListAvailable -Name "PSReadLine") {
-	Set-PSReadLineOption -PredictionSource History
+	Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 	Set-PSReadLineOption -PredictionViewStyle ListView
 	Set-PSReadLineOption -EditMode Windows
 	Set-PSReadLineKeyHandler -Key Tab -Function Complete
@@ -49,14 +51,71 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 $env:FZF_DEFAULT_OPTS = '--height 50% --layout=reverse --border'
-# $env:BW_SESSION = "$env:BW_SESSION"
+
 function ff {
 	nvim $(fzf --preview 'bat --color=always {}' --preview-window '~3')
 }
 
 # Override PSReadLine's history search
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' `
-	-PSReadlineChordReverseHistory 'Ctrl+r'
+# Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' `
+# -PSReadlineChordReverseHistory 'Ctrl+r'
 # Override default tab completion
-Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
-# fnm env --use-on-cd | Out-String | Invoke-Expression
+# Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+
+function ytuu {
+	## Шапка скрипта ##
+	[System.Console]::Title = "Скачать видео с YouTube с помощью yt-dlp"
+
+	## Предупреждение перед запуском ##
+	Write-Host
+	Write-Host "Перед запуском операции скачивания поместите в буфер обмена URL нужного ролика, канала или плейлиста" -ForegroundColor Cyan
+
+	## Запуск цикла скрипта ##
+	while ($true) {
+
+		## Формирование меню скрипта ##
+		Write-Host
+		Write-Host "------------------------------------------------" -ForegroundColor Yellow
+		Write-Host "   1. Скачать видео" -ForegroundColor Green
+		Write-Host "   2. Скачать аудиодорожку в формате mp3" -ForegroundColor Green
+		Write-Host "------------------------------------------------" -ForegroundColor Yellow
+		Write-Host
+
+		## Селектор ##
+		$choice = Read-Host "Выберите вариант"
+		Write-Host
+
+		switch ($choice) {
+
+			## Скачивание видео ##
+			1 {
+				$cmd = "-f bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --merge-output-format mp4 $(Get-Clipboard) -o video\%(title)s.%(ext)s"
+				Start-Process -FilePath yt-dlp.exe -ArgumentList $cmd -Wait -NoNewWindow
+			}
+
+			## Скачивание mp3 ##
+			2 {
+				$cmd = "-x --audio-format mp3 --audio-quality 0 --embed-thumbnail $(Get-Clipboard) -o audio\%(title)s.%(ext)s"
+				Start-Process -FilePath yt-dlp.exe -ArgumentList $cmd -Wait -NoNewWindow
+			}
+
+			## Неверный выбор ##
+			default {
+				Write-Host "Неверный выбор. Попробуйте снова." -ForegroundColor Red
+				Write-Host
+			}
+
+		}
+	}
+}
+
+function ncu {
+	if (Get-Command npm -ErrorAction SilentlyContinue) {
+		npx npm-check-updates $args
+	}
+}
+function Add-NodeVersion {
+	if (Get-Command node -ErrorAction SilentlyContinue) {
+		node --version | Out-File -FilePath .\.node-version
+	}
+}

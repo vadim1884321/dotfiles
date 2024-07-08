@@ -2,14 +2,15 @@
 	.SYNOPSIS
 	Font Cascadia Code from Microsoft
 
+	.DESCRIPTION
+	The script checks if the Cascadia Code font from Microsoft is installed and if it is not installed,
+	then downloads it and installs it into the system
+
 	.EXAMPLE
 	.\CascadiaCode.ps1
 
 	.LINK
 	https://github.com/microsoft/cascadia-code
-
-	.NOTES
-	The 07/05/24 version
 
 	.NOTES
 	Current user

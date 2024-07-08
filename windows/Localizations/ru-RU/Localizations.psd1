@@ -76,6 +76,21 @@ TelegramGroupTitle                        = Присоединяйтесь к н
 TelegramChannelTitle                      = Присоединяйтесь к нашему официальному каналу в Telegram.
 DiscordChannelTitle                       = Присоединяйтесь к нашему официальному каналу в Discord.
 Uninstall                                 = Удалить
+ConfigPowershellProfile                   = Настройка профиля PowerShell
+ConfigSuccessfully                        = успешно завершилась!
+ConfigFailure                             = завершилась неудачей.
+InputBWAPIClient                          = Введите Bitwarden API ключ
+InputBWAPIClientSecret                    = Введите Bitwarden Secret токен
+InputBWPassword                           = Введите Bitwarden мастер пароль
+menuTitle                                 = Конфигурация Windows
+menuExit                                  = Выход
+menuInstallApps                           = Установка приложений
+menuRemoveDebloatApps                     = Удаление предустановленных приложений
+menuInstallSecretVault                    = Установка хранилища секретов и настройка Bitwarden CLI
+menuTweaks                                = Тонкая настройка Windows
+menuInstallWSL                            = Установка WSL Arch Linux
+appSkippingInstall                        = Пропуск установки приложения:
+GetBWSecretRequest                        = Запрос к секретам Bitwarden CLI, подождите...
 '@
 
 # SIG # Begin signature block
